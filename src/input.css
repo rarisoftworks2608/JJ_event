@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-pearl-100 text-obsidian-950 antialiased selection:bg-primary-800 selection:text-gold-200 overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-display-title {
+    font-family: 'Cinzel', 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Luxury Gold Gradient Text */
+  .text-gold-luxury {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-600 via-amber-300 to-gold-500 font-medium;
+  }
+
+  .text-maroon-luxury {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-800 via-primary-900 to-obsidian-950;
+  }
+
+  /* Frosted Glass Panels */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-pearl-300/80 shadow-glass;
+  }
+
+  .glass-card-dark {
+    @apply bg-obsidian-900/80 backdrop-blur-xl border border-white/10 text-white shadow-2xl;
+  }
+
+  .glass-nav {
+    @apply bg-white/75 backdrop-blur-2xl border border-stone-200/50 shadow-sm;
+  }
+
+  /* Luxury Buttons */
+  .btn-gold-luxury {
+    @apply inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase bg-gradient-to-r from-gold-500 via-amber-300 to-gold-600 text-obsidian-950 shadow-gold-glow hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 border border-gold-300/60;
+  }
+
+  .btn-maroon-luxury {
+    @apply inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase bg-primary-800 text-white shadow-maroon-glow hover:bg-primary-900 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 border border-primary-700;
+  }
+
+  .btn-ghost-luxury {
+    @apply inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase bg-white/10 hover:bg-white/20 text-white border border-white/25 hover:border-gold-300/60 transition-all duration-300 backdrop-blur-md;
+  }
+
+  .btn-outline-dark {
+    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full font-medium text-xs sm:text-sm tracking-wide bg-transparent text-obsidian-900 border border-stone-300 hover:border-primary-800 hover:text-primary-800 transition-all duration-300;
+  }
+
+  /* Luxury Service Cards */
+  .luxury-card {
+    @apply relative rounded-3xl bg-white border border-pearl-300/80 shadow-luxury hover:shadow-luxury-hover transition-all duration-500 hover:-translate-y-2 overflow-hidden;
+  }
+
+  /* Gallery Item Overlay */
+  .gallery-item {
+    @apply relative overflow-hidden rounded-2xl cursor-pointer shadow-md bg-stone-900;
+  }
+
+  .gallery-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-obsidian-950/95 via-obsidian-950/40 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6 text-white;
+  }
+  
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.06);
+  }
+}
+
+/* Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* WhatsApp Floating Pulse */
+@keyframes pulse-ring-luxury {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70% { transform: scale(1); box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-pulse {
+  animation: pulse-ring-luxury 2.5s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fbf9f6;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b89228;
+}

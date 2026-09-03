@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our 13 Specialized Services | Jai Jinendra Events</title>
+  <meta name="description" content="Explore all 13 specialized event management services by Jai Jinendra Events: Wedding decor, baby showers, birthdays, LED walls, drone cinematography, pure catering & live streaming.">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/png" href="./public/images/logo.png">
+</head>
+<body class="bg-pearl-100 text-obsidian-950 font-sans selection:bg-primary-800 selection:text-gold-200">
+
+  <!-- Floating Glass Navigation Bar -->
+  <header id="main-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 py-3 sm:py-5 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-nav rounded-2xl sm:rounded-full px-5 sm:px-8 py-3.5 flex items-center justify-between shadow-glass border border-white/60">
+        
+        <a href="index.html" class="flex items-center gap-3 group shrink-0">
+          <img src="./public/images/logo.png" alt="Jai Jinendra Events Logo" class="w-10 h-10 rounded-full object-cover shadow-md group-hover:scale-105 transition-transform duration-300 border border-gold-500/40">
+          <div>
+            <span class="font-display-title text-base sm:text-xl font-bold tracking-tight text-obsidian-950 group-hover:text-primary-800 transition-colors block">
+              JAI JINENDRA <span class="text-gold-600 font-normal">EVENTS</span>
+            </span>
+            <span class="text-[9px] tracking-[0.22em] uppercase font-bold text-stone-500 block -mt-0.5">
+              Royal Atelier • Est. 2026
+            </span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-xs font-bold tracking-wider uppercase text-stone-700">
+          <a href="index.html" class="hover:text-primary-800 hover:border-b-2 hover:border-gold-500 pb-0.5 transition-all">Home</a>
+          <a href="about.html" class="hover:text-primary-800 hover:border-b-2 hover:border-gold-500 pb-0.5 transition-all">About Us</a>
+          <a href="services.html" class="text-primary-800 font-bold border-b-2 border-primary-800 pb-0.5 flex items-center gap-1.5">
+            <span>Services</span>
+            <span class="px-1.5 py-0.5 text-[10px] bg-primary-800 text-white rounded-full font-bold">13</span>
+          </a>
+          <a href="gallery.html" class="hover:text-primary-800 hover:border-b-2 hover:border-gold-500 pb-0.5 transition-all">Gallery</a>
+          <a href="contact.html" class="hover:text-primary-800 hover:border-b-2 hover:border-gold-500 pb-0.5 transition-all">Contact</a>
+        </nav>
+
+        <div class="hidden sm:flex items-center gap-3 shrink-0">
+          <a href="contact.html" class="btn-maroon-luxury text-xs py-2.5 px-6 shadow-sm">
+            <span>Book Consultation</span>
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn" type="button" aria-label="Open Menu" class="lg:hidden p-2.5 rounded-xl text-obsidian-900 hover:bg-stone-100 transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/70 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white z-50 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div class="p-6 flex items-center justify-between border-b border-stone-100 bg-obsidian-950 text-white">
+      <div>
+        <div class="font-display-title text-base font-bold text-gold-300">JAI JINENDRA EVENTS</div>
+        <div class="text-[10px] text-stone-400 tracking-widest uppercase mt-0.5">Est. 2026 • Royal Celebrations</div>
+      </div>
+      <button id="mobile-menu-close" type="button" class="p-2 text-stone-400 hover:text-white rounded-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="p-6 flex-1 overflow-y-auto space-y-4 text-sm font-semibold tracking-wide uppercase">
+      <a href="index.html" class="flex items-center justify-between py-3 text-stone-700 hover:text-primary-800 border-b border-stone-100">
+        <span>Home</span>
+        <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="about.html" class="flex items-center justify-between py-3 text-stone-700 hover:text-primary-800 border-b border-stone-100">
+        <span>About Us</span>
+        <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="services.html" class="flex items-center justify-between py-3 text-primary-800 border-b border-stone-100">
+        <span>All 13 Services</span>
+        <span class="px-2 py-0.5 text-xs bg-gold-100 text-gold-800 rounded-full font-bold">13</span>
+      </a>
+      <a href="gallery.html" class="flex items-center justify-between py-3 text-stone-700 hover:text-primary-800 border-b border-stone-100">
+        <span>Photo Gallery</span>
+        <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="contact.html" class="flex items-center justify-between py-3 text-stone-700 hover:text-primary-800 border-b border-stone-100">
+        <span>Contact & Concierge</span>
+        <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="p-6 border-t border-stone-100 bg-stone-50 space-y-2.5">
+      <a href="https://wa.me/919021702266" data-config-href="whatsapp" target="_blank" class="w-full btn-gold-luxury py-3.5 text-xs justify-center flex">
+        <span>Instant WhatsApp Chat</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Page Header Banner with Generous Top Margin -->
+  <section class="pt-20 sm:pt-28 lg:pt-32 pb-20 sm:pb-24 bg-obsidian-950 text-white relative overflow-hidden text-center">
+    <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/80 to-obsidian-950/90"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 space-y-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-gold-400/30 text-gold-300 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
+        <span>✨ 13 In-House Services</span>
+      </div>
+      <h1 class="font-display-title text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+        Curated Event Capabilities
+      </h1>
+      <p class="text-stone-300 text-sm sm:text-base max-w-2xl mx-auto font-light">
+        From royal architectural mandap setups to high-definition broadcast LED screens, 4K drone cinematography, and authentic Jain gourmet catering.
+      </p>
+    </div>
+  </section>
+
+  <!-- 13 Services Showcase Grid -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- 01. Wedding Decorations & Full Management -->
+      <div id="wedding-decorations" class="luxury-card flex flex-col justify-between border-t-4 border-t-primary-800">
+        <img src="./public/gallery/wedding/012.jpg" alt="Wedding Decorations & Full Management" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">01</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary-100 text-primary-900">
+              Royal Wedding
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Wedding Decorations & Full Management
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Bespoke royal mandap architecture, cascading floral canopies, fairy light tunnels, hydraulic Varmala staging, and 360-degree wedding hospitality.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Traditional & Royal Mandap Concepts</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Grand Welcome Gates & Pathway Styling</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Varmala Hydraulic & Special FX Stages</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Complete Vendor & Venue Coordination</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=wedding-decorations" class="btn-maroon-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Wedding</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 02. Baby Shower & Dohale Jevan -->
+      <div id="baby-shower" class="luxury-card flex flex-col justify-between border-t-4 border-t-gold-500">
+        <img src="./public/gallery/baby-shower/IMG_9631.JPG" alt="Baby Shower & Dohale Jevan" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">02</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-gold-100 text-gold-900">
+              Family Milestone
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Baby Shower & Dohale Jevan
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Dreamy pastel themes, floral baby cradle decor, traditional Maharashtrian / Gujarati seating arrangements, and interactive family welcome moments.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Fresh Flower Cradle / Jhula Decoration</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Pastel Balloon Installations & Neon Signs</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Mom-to-be Special Throne & Photo Booths</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Traditional Ritual Support & Emcee</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=baby-shower" class="btn-gold-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Baby Shower</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 03. Birthday Events -->
+      <div id="birthday-events" class="luxury-card flex flex-col justify-between border-t-4 border-t-primary-800">
+        <img src="./public/gallery/birthday/DSC_1182.JPG" alt="Birthday Events & Jubilees" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">03</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary-100 text-primary-900">
+              Celebration
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Birthday Events & Jubilees
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Custom 3D character themes for children, 18th/21st milestone parties, and glamorous 50th/60th golden jubilee celebrations with stage lighting.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> 3D Character & Neon Backdrop Setups</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Cake Cutting Special Stage & Pyro Effects</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Magicians, Balloon Artists & Game Anchors</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> High-Energy DJ & Acoustic Sound Setup</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=birthday-events" class="btn-maroon-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Birthday</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 04. Engagement -->
+      <div id="engagement" class="luxury-card flex flex-col justify-between border-t-4 border-t-gold-500">
+        <img src="https://images.unsplash.com/photo-1780303864944-737d88c789f4?auto=format&fit=crop&w=800&q=80" alt="Engagement & Ring Ceremonies" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">04</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-gold-100 text-gold-900">
+              Pre-Wedding
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Engagement & Ring Ceremonies
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Romantic floral arches, customized couple monograms, fairy light backdrops, and exclusive ring presentation tray setups.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Designer Ring Tray & Platter presentation</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Romantic Floral Ring Stage & Seating</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Ambient Fairy Light & Cold Pyro Sparklers</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Couple Entry Concept & Smoke Effects</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=engagement" class="btn-gold-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Engagement</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 05. Corporate Events -->
+      <div id="corporate-events" class="luxury-card flex flex-col justify-between border-t-4 border-t-stone-800">
+        <img src="./public/gallery/corporate/DSC_0826.JPG" alt="Corporate Events & Conferences" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">05</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-stone-200 text-stone-800">
+              Corporate
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Corporate Events & Conferences
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Seamless conferences, annual excellence awards, dealer meets, and product launches with high-definition AV projection and stage rigging.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Truss Staging, Podium & Acoustic Sound</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Delegate Registration & Digital Badging</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Award Gala Lighting, Trophy & Live Relay</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Executive Catering & Hospitality</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=corporate-events" class="btn-maroon-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Corporate</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 06. Catering Services (All Types) -->
+      <div id="catering-services" class="luxury-card flex flex-col justify-between border-t-4 border-t-gold-500">
+        <img src="https://images.unsplash.com/photo-1738202321539-9ed4a727f735?auto=format&fit=crop&w=800&q=80" alt="Catering Services (All Types)" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">06</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-emerald-100 text-emerald-900 font-bold">
+              100% Pure Jain
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Catering Services (All Types)
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Royal Rajasthani, Gujarati, North & South Indian spreads, alongside authentic Jain catering (strictly no root vegetables) and live global counters.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Authentic Jain Catering with Dedicated Chefs</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Live Chaat, Mocktail & Global Food Stalls</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Royal Brass & Copper Buffet Presentation</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Trained Uniformed Service Captains</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=catering-services" class="btn-gold-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Catering</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 07. Anchoring / MC Services -->
+      <div id="anchoring-mc" class="luxury-card flex flex-col justify-between border-t-4 border-t-primary-800">
+        <img src="https://images.unsplash.com/photo-1580188928585-0ef5c1a5c4dd?auto=format&fit=crop&w=800&q=80" alt="Anchoring / MC Services" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">07</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary-100 text-primary-900">
+              Entertainment
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Anchoring / MC Services
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Dynamic, charismatic multilingual anchors for energetic Sangeet nights, interactive wedding games, and formal corporate conferences.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Fluent in Hindi, English, Gujarati & Marathi</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Sangeet Night Fun & Crowd Engagement</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Protocol-Trained Corporate MCs</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Custom Scripting & Interactive Timeline</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=anchoring-mc" class="btn-maroon-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Anchoring / MC</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 08. LED Wall Setup -->
+      <div id="led-wall-setup" class="luxury-card flex flex-col justify-between border-t-4 border-t-stone-800">
+        <img src="https://images.unsplash.com/photo-1571839154183-6bb84a567903?auto=format&fit=crop&w=800&q=80" alt="LED Wall Setup (P2.5 / P3)" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">08</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-stone-200 text-stone-800">
+              Technical Setup
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            LED Wall Setup (P2.5 / P3)
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Ultra-sharp indoor and outdoor LED video walls for stage backdrops, live camera relays, countdown visuals, and multimedia presentations.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Seamless P2.5 & P3 Resolution Panels</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Split-Screen Live Camera Feeds & Graphics</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> High-Brightness Outdoor Day/Night Panels</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Dedicated Visual Switcher & Operators</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=led-wall-setup" class="btn-maroon-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for LED Walls</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 09. Crane Services (Jimmy Jib) -->
+      <div id="crane-services" class="luxury-card flex flex-col justify-between border-t-4 border-t-gold-500">
+        <img src="https://images.unsplash.com/photo-1752306004700-6ca435c75004?auto=format&fit=crop&w=800&q=80" alt="Crane Services (Jimmy Jib 24-40ft)" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">09</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-gold-100 text-gold-900">
+              Broadcast Rig
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Crane Services (Jimmy Jib 24-40ft)
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Heavy-duty camera crane setups for grand sweeping cinematic bird's-eye angles during Varmala ceremonies, Baraat entries, and stage shows.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> 24ft to 40ft Modular Jimmy Jib Cranes</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Smooth 360° Hydraulic Pan & Tilt Head</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Real-Time Live Feed directly to LED Wall</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Certified Crane Camera Operators</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=crane-services" class="btn-gold-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Crane</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 10. Drone Services -->
+      <div id="drone-services" class="luxury-card flex flex-col justify-between border-t-4 border-t-primary-800">
+        <img src="https://images.unsplash.com/photo-1456615913800-c33540eac399?auto=format&fit=crop&w=800&q=80" alt="Drone Aerial Cinematography" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">10</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary-100 text-primary-900">
+              Aerial Media
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Drone Aerial Cinematography
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Licensed 4K drone cinematography capturing grand venue landscapes, majestic Baraat processions, and outdoor wedding highlights from the skies.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> 4K Ultra-HD Crisp Aerial Videography</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Baraat & Venue Panoramic Bird's-Eye Views</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Low-Light Night Aerial Photography</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Certified Remote Drone Pilots</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=drone-services" class="btn-maroon-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Drone</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 11. YouTube & Facebook Live Streaming -->
+      <div id="live-streaming" class="luxury-card flex flex-col justify-between border-t-4 border-t-stone-800">
+        <img src="https://images.unsplash.com/photo-1575507479993-7bb702d5e966?auto=format&fit=crop&w=800&q=80" alt="Live Streaming (YouTube & Facebook)" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">11</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-stone-200 text-stone-800">
+              Live Broadcast
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Live Streaming (YouTube & Facebook)
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Multi-camera broadcast live streaming allowing distant relatives and international guests to join your celebration in high-definition without lag.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Multi-Camera Live Switching & Audio Sync</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Bonded High-Speed Internet Transmitters</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Custom Family Graphic Overlays & Names</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Private or Public Streams</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=live-streaming" class="btn-maroon-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Live Stream</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 12. Photography & Cinematography -->
+      <div id="photography-cinematography" class="luxury-card flex flex-col justify-between border-t-4 border-t-gold-500">
+        <img src="https://images.unsplash.com/photo-1551780165-f2a8e6d86eb8?auto=format&fit=crop&w=800&q=80" alt="Photography & Cinematography" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">12</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-gold-100 text-gold-900">
+              Visual Arts
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Photography & Cinematography
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Story-driven candid photography, emotional wedding teaser films, and luxury lay-flat photo albums crafted to preserve timeless family heirlooms.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Candid & Portrait Photographers</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> 4K Bollywood-Style Highlight Films</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Premium Leatherette Flush Albums</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Digital Cloud Gallery Delivery</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=photography-cinematography" class="btn-gold-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Photography</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <!-- 13. Reels / Short-Form Video Content -->
+      <div id="reels-content" class="luxury-card flex flex-col justify-between border-t-4 border-t-primary-800">
+        <img src="https://images.unsplash.com/photo-1697649272441-be6e4a563e9b?auto=format&fit=crop&w=800&q=80" alt="Reels & Short-Form Video Content" class="w-full aspect-[3/2] object-cover">
+        <div class="p-8 flex flex-col justify-between flex-1">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-display-title text-2xl font-bold text-stone-300">13</span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary-100 text-primary-900">
+              Social Media
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-obsidian-950 mb-3">
+            Reels & Short-Form Video Content
+          </h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Dedicated on-site social media creators capturing aesthetic 9:16 vertical clips, trending transitions, and delivering reels ready to post during your event.
+          </p>
+          <ul class="space-y-2 text-xs text-stone-600 mb-6">
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> On-Site Smartphone Videographer</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Same-Day / Next-Morning Reel Delivery</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Trending Music Sync & Color Grading</li>
+            <li class="flex items-center gap-2"><span class="text-gold-600 font-bold">✓</span> Collab-Ready Formats</li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <a href="contact.html?service=reels-content" class="btn-maroon-luxury text-xs py-3 w-full text-center">
+            <span>Inquire for Reels Creator</span>
+          </a>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Concierge Banner Placed Below -->
+  <section class="py-16 bg-gradient-to-r from-obsidian-950 via-primary-950 to-obsidian-950 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
+      <h2 class="font-display-title text-2xl sm:text-4xl font-bold text-gold-300">
+        Need a Custom Multi-Service Package?
+      </h2>
+      <p class="text-stone-300 text-xs sm:text-sm max-w-xl mx-auto font-light">
+        Combine Mandap Decor, LED Walls, Drone Coverage, and Catering for special bundled rates and seamless single-point coordination.
+      </p>
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="contact.html" class="btn-gold-luxury text-xs py-3.5 px-8">
+          <span>Request Custom Package Quote</span>
+        </a>
+        <a href="https://wa.me/919021702266" data-config-href="whatsapp" target="_blank" class="btn-ghost-luxury text-xs py-3.5 px-8">
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimalist Luxury Footer -->
+  <footer class="bg-obsidian-950 text-stone-400 border-t border-white/10 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="./public/images/logo.png" alt="Jai Jinendra Events Logo" class="w-9 h-9 rounded-full object-cover shadow-gold-glow">
+            <div>
+              <span class="font-display-title text-lg font-bold text-white block">Jai Jinendra Events</span>
+              <span class="text-[9px] tracking-widest text-gold-400 uppercase font-semibold block">Est. 2026</span>
+            </div>
+          </div>
+          <p class="text-stone-400 text-xs leading-relaxed" data-config="subTagline">
+            Premier Indian wedding and event management company offering royal decorations, audio-visual technical setups, pure catering, and aerial cinematography.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-display-title text-white text-sm font-bold uppercase tracking-wider mb-4 border-b border-gold-500/30 pb-2">Navigation</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html" class="hover:text-gold-300 transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-gold-300 transition-colors">About Us</a></li>
+            <li><a href="services.html" class="text-gold-400 font-bold">All 13 Services</a></li>
+            <li><a href="gallery.html" class="hover:text-gold-300 transition-colors">Photo Gallery</a></li>
+            <li><a href="contact.html" class="hover:text-gold-300 transition-colors">Contact Concierge</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display-title text-white text-sm font-bold uppercase tracking-wider mb-4 border-b border-gold-500/30 pb-2">Top Services</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#wedding-decorations" class="hover:text-gold-300">Wedding & Mandap Decor</a></li>
+            <li><a href="#baby-shower" class="hover:text-gold-300">Baby Shower & Godh Bharai</a></li>
+            <li><a href="#drone-services" class="hover:text-gold-300">4K Drone & Jimmy Jib</a></li>
+            <li><a href="#catering-services" class="hover:text-gold-300">Pure Jain Gourmet Catering</a></li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h4 class="font-display-title text-white text-sm font-bold uppercase tracking-wider mb-4 border-b border-gold-500/30 pb-2">Concierge</h4>
+          <div class="text-xs text-stone-400 space-y-2">
+            <p class="flex items-start gap-2">
+              <svg class="w-3.5 h-3.5 text-gold-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span data-config="address">Shanta Kanta Niwas, Flat No. 305, Gehlot Building, Shivshambhonagar, Kondhwa BK, Pune, 411048.</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span data-config="phoneDisplay">+91 90217 02266</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span data-config="email">jaijinedraevents@gmail.com</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        <div>© <span id="current-year">2026</span> Jai Jinendra Events. All rights reserved.</div>
+        <div class="text-stone-400 self-end sm:self-auto pr-20">Powered &amp; Managed by <span class="text-gold-400 font-semibold">RaRi Softworks</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/919021702266" data-config-href="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 group flex items-center gap-3">
+    <div class="hidden sm:block bg-white text-obsidian-950 text-xs font-semibold py-2 px-3.5 rounded-full shadow-lg border border-stone-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+      💬 Chat with Event Team
+    </div>
+    <div class="w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 whatsapp-pulse">
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.316 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.818-.981z"/></svg>
+    </div>
+  </a>
+
+  <!-- JavaScript Scripts -->
+  <script src="./js/config.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

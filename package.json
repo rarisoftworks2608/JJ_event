@@ -1,0 +1,23 @@
+{
+  "name": "jai-jinendra-events",
+  "version": "1.0.0",
+  "description": "Modern, mobile-first website for Jai Jinendra Events",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./css/style.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "events",
+    "wedding",
+    "jai-jinendra-events",
+    "event-management",
+    "decorations"
+  ],
+  "author": "Jai Jinendra Events",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
+
