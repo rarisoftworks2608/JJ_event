@@ -17,19 +17,44 @@ const SITE_CONFIG = {
     tagline: "Creating Timeless Celebrations & Royal Memories",
     subTagline: "From grand wedding decors and cinematic drone coverage to high-energy birthdays and seamless corporate affairs, we bring your dream events to life.",
     email: "jaijinedraevents@gmail.com",
-    phone: "+91 90217 02266", // Update with your actual phone number
+    phone: "+91 90217 02266", // Primary contact
     phoneDisplay: "+91 90217 02266",
-    whatsappNumber: "919021702266", // Phone number without '+' or spaces for WhatsApp API
+    whatsappNumber: "919021702266",
     instagramHandle: "jaijinendraevents",
     instagramUrl: "https://instagram.com/jaijinendraevents",
     facebookUrl: "https://facebook.com/jaijinendraevents",
     youtubeUrl: "https://youtube.com/@jaijinendraevents",
-    location: "Pune / Mumbai & Across India", // Update with your city or service area
+    location: "Pune / Mumbai & Across India",
     serviceArea: "Maharashtra, Goa & Destination Events Pan-India",
     address: "Shanta Kanta Niwas, Flat No. 305, Gehlot Building, Shivshambhonagar, Kondhwa BK, Pune, 411048.",
     googleMapsEmbedUrl: "https://www.google.com/maps?q=Shanta%20Kanta%20Niwas%2C%20Flat%20No.%20305%2C%20Gehlot%20Building%2C%20Shivshambhonagar%2C%20Kondhwa%20BK%2C%20Pune%2C%20411048&output=embed",
     operatingHours: "Mon - Sun: 9:00 AM - 9:00 PM (IST)",
   },
+
+  // 3 Managing Partners
+  partners: [
+    {
+      name: "Umesh Pawar",
+      phone: "+91 98811 77056",
+      phoneRaw: "919881177056",
+      display: "98811 77056",
+      role: "Managing Partner"
+    },
+    {
+      name: "Nilesh H Sethiya",
+      phone: "+91 90217 02266",
+      phoneRaw: "919021702266",
+      display: "90217 02266",
+      role: "Managing Partner"
+    },
+    {
+      name: "Kumar D Mhangare",
+      phone: "+91 99232 31406",
+      phoneRaw: "919923231406",
+      display: "99232 31406",
+      role: "Managing Partner"
+    }
+  ],
 
   // Key Stats Counter
   stats: [

@@ -75,10 +75,8 @@ function initNavigation() {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 20) {
         header.classList.add('shadow-md');
-        header.classList.remove('shadow-sm');
       } else {
         header.classList.remove('shadow-md');
-        header.classList.add('shadow-sm');
       }
     });
   }
