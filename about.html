@@ -122,17 +122,20 @@
   </div>
 
   <!-- Page Header Banner with Balanced Spacing -->
-  <section class="pt-36 sm:pt-44 pb-20 sm:pb-24 bg-obsidian-950 text-white relative overflow-hidden text-center">
-    <!-- Our own event photo, clearly visible under a soft overlay -->
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./public/optimized/haldi/06-1920.jpg');"></div>
-    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(10,12,14,0.82)_0%,rgba(10,12,14,0.55)_50%,rgba(10,12,14,0.75)_100%)]"></div>
-    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-obsidian-950/80 to-transparent"></div>
-    
-    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
-      <h1 class="font-display-title text-3xl sm:text-5xl font-bold tracking-tight text-white">
+  <section class="relative h-[100svh] min-h-[560px] flex items-center justify-center overflow-hidden bg-obsidian-950 text-white text-center">
+    <!-- Page hero: our own event photo, full-bleed and sharp (sized per screen), under a light overlay -->
+    <img src="./public/optimized/wedding/05-1920.jpg" srcset="./public/optimized/wedding/05-640.jpg 640w, ./public/optimized/wedding/05-1280.jpg 1280w, ./public/optimized/wedding/05-1920.jpg 1920w" sizes="(max-aspect-ratio: 3/2) 115vh, 100vw" width="1920" height="1280" alt="" fetchpriority="high" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(10,12,14,0.7)_0%,rgba(10,12,14,0.4)_50%,rgba(10,12,14,0.6)_100%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_55%,rgba(10,12,14,0.55)_0%,rgba(10,12,14,0.25)_60%,rgba(10,12,14,0)_100%)]"></div>
+    <div class="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-obsidian-950/70 to-transparent"></div>
+    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-obsidian-950/80 to-transparent"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 pt-16 space-y-5">
+      <p class="hero-eyebrow">About Jai Jinendra Events</p>
+      <h1 class="hero-title !text-[clamp(2.4rem,5vw,4.5rem)]">
         Our Story & Craft
       </h1>
-      <p class="text-stone-300 text-xs sm:text-sm max-w-2xl mx-auto font-light">
+      <p class="hero-tagline !normal-case !tracking-wide text-sm sm:text-base max-w-2xl mx-auto">
         Where sacred Indian rituals meet modern high-production audio-visual technology and genuine hospitality.
       </p>
     </div>
