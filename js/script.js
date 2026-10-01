@@ -752,16 +752,21 @@ _Sent via Jai Jinendra Events Website_`;
       `;
     }
 
+    // Open WhatsApp straight from the click (a delayed window.open gets blocked as a pop-up on phones);
+    // if the browser still blocks the new tab, open WhatsApp in this tab instead
+    const waWindow = window.open(whatsappUrl, '_blank');
+    if (!waWindow) window.location.href = whatsappUrl;
     setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
       if (submitBtn) submitBtn.innerHTML = originalText;
-    }, 400);
+    }, 1200);
   });
 
   // Mailto fallback button handler
   const mailtoBtn = document.getElementById('send-email-fallback-btn');
   if (mailtoBtn) {
     mailtoBtn.addEventListener('click', () => {
+      // Same required fields as the WhatsApp button (name, phone, event type)
+      if (!form.reportValidity()) return;
       const name = form.querySelector('[name="name"]')?.value.trim() || 'Guest';
       const phone = form.querySelector('[name="phone"]')?.value.trim() || 'Not provided';
       const eventType = form.querySelector('[name="event_type"]')?.value || 'General Enquiry';

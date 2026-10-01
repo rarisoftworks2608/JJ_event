@@ -169,6 +169,27 @@
     border-bottom: 1px solid rgba(212, 175, 55, 0.55);
   }
 
+  /* Enquiry form (contact.html): one label style, one field height, aligned rows */
+  .form-label {
+    @apply block mb-2 text-xs font-bold uppercase tracking-wider text-obsidian-900;
+  }
+
+  .form-field {
+    @apply block w-full h-12 px-4 rounded-xl border border-stone-200 bg-stone-50/60 text-sm text-obsidian-950 transition-all focus:outline-none focus:ring-2 focus:ring-primary-800/20 focus:border-primary-800;
+  }
+
+  textarea.form-field {
+    @apply h-auto min-h-[120px] py-3 resize-y;
+  }
+
+  select.form-field {
+    @apply appearance-none pr-11 truncate cursor-pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23801d30' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+  }
+
   /* Luxury Buttons */
   .btn-gold-luxury {
     @apply inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase bg-gradient-to-r from-gold-500 via-amber-300 to-gold-600 text-obsidian-950 shadow-gold-glow hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 border border-gold-300/60;

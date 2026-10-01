@@ -159,44 +159,41 @@
           </p>
         </div>
 
-        <form id="event-inquiry-form" class="space-y-4.5">
-          
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <form id="event-inquiry-form" class="space-y-5">
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-obsidian-900 mb-1.5">
+              <label class="form-label">
                 Your Full Name <span class="text-primary-700">*</span>
               </label>
               <input 
                 type="text" 
                 name="name" 
                 required 
-                placeholder="e.g. Rajesh Shah" 
-                class="w-full px-4 py-3 rounded-2xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-primary-800/20 focus:border-primary-800 text-sm transition-all bg-stone-50/50"
+                class="form-field"
               >
             </div>
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-obsidian-900 mb-1.5">
+              <label class="form-label">
                 Phone / WhatsApp Number <span class="text-primary-700">*</span>
               </label>
               <input 
                 type="tel" 
                 name="phone" 
                 required 
-                placeholder="e.g. +91 98811 77056" 
-                class="w-full px-4 py-3 rounded-2xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-primary-800/20 focus:border-primary-800 text-sm transition-all bg-stone-50/50"
+                class="form-field"
               >
             </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-obsidian-900 mb-1.5">
+          <div>
+              <label class="form-label">
                 Event Type <span class="text-primary-700">*</span>
               </label>
               <select 
                 name="event_type" 
                 required 
-                class="w-full px-4 py-3 rounded-2xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-primary-800/20 focus:border-primary-800 text-sm transition-all bg-stone-50/50"
+                class="form-field"
               >
                 <option value="Wedding Decorations & Full Management">Wedding Decorations & Full Management</option>
                 <option value="Baby Shower / Dohale Jevan">Baby Shower / Dohale Jevan</option>
@@ -214,26 +211,25 @@
                 <option value="Custom Bundled Package (Multiple Services)">Custom Bundled Package (Multiple Services)</option>
               </select>
             </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-obsidian-900 mb-1.5">
+              <label class="form-label">
                 Approximate Event Date
               </label>
               <input 
                 type="date" 
                 name="event_date" 
-                class="w-full px-4 py-3 rounded-2xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-primary-800/20 focus:border-primary-800 text-sm transition-all bg-stone-50/50"
+                class="form-field"
               >
             </div>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-obsidian-900 mb-1.5">
+              <label class="form-label">
                 Expected Guests
               </label>
               <select 
                 name="guest_count" 
-                class="w-full px-4 py-3 rounded-2xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-primary-800/20 focus:border-primary-800 text-sm transition-all bg-stone-50/50"
+                class="form-field"
               >
                 <option value="50 - 150 Guests (Intimate)">50 - 150 Guests (Intimate)</option>
                 <option value="150 - 300 Guests (Medium)">150 - 300 Guests (Medium)</option>
@@ -242,28 +238,27 @@
                 <option value="To Be Decided">To Be Decided</option>
               </select>
             </div>
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-obsidian-900 mb-1.5">
+          </div>
+
+          <div>
+              <label class="form-label">
                 City / Venue Location
               </label>
               <input 
                 type="text" 
                 name="city" 
-                placeholder="e.g. Pune, Mumbai, Destination" 
-                class="w-full px-4 py-3 rounded-2xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-primary-800/20 focus:border-primary-800 text-sm transition-all bg-stone-50/50"
+                class="form-field"
               >
             </div>
-          </div>
 
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-obsidian-900 mb-1.5">
+            <label class="form-label">
               Specific Requirements / Theme Ideas / Notes
             </label>
             <textarea 
               name="message" 
               rows="4" 
-              placeholder="Tell us about your mandap style, color theme, catering preferences, or technical equipment needed..." 
-              class="w-full px-4 py-3 rounded-2xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-primary-800/20 focus:border-primary-800 text-sm transition-all bg-stone-50/50"
+              class="form-field"
             ></textarea>
           </div>
 
