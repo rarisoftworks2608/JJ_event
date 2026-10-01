@@ -79,7 +79,7 @@ function initDynamicConfig() {
   document.querySelectorAll('[data-config-href]').forEach(el => {
     const type = el.getAttribute('data-config-href');
     if (type === 'whatsapp') {
-      const defaultMsg = encodeURIComponent(`Hello Jai Jinendra Events! I would like to enquire about event management services for an upcoming event.`);
+      const defaultMsg = encodeURIComponent(`Hello Jai Jinendra Events! I would like to make an enquiry about event management services for an upcoming event.`);
       el.setAttribute('href', `https://wa.me/${cfg.whatsappNumber}?text=${defaultMsg}`);
     } else if (type === 'phone') {
       el.setAttribute('href', `tel:${cfg.phone.replace(/[^0-9+]/g, '')}`);
@@ -308,7 +308,7 @@ function initGalleryAndLightbox() {
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
           </div>
           <h3 class="text-xl font-serif text-charcoal-800 mb-2">Photos Coming Soon</h3>
-          <p class="text-stone-500 text-sm max-w-md mx-auto">We are updating high-resolution photographs for this category. Stay tuned or enquire with our team directly!</p>
+          <p class="text-stone-500 text-sm max-w-md mx-auto">We are updating high-resolution photographs for this category. Stay tuned or send an enquiry to our team directly!</p>
         </div>
       `;
       return;
