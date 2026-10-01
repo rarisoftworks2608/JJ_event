@@ -42,17 +42,42 @@
     @apply bg-obsidian-900/80 backdrop-blur-xl border border-white/10 text-white shadow-2xl;
   }
 
-  /* Full-width transparent navigation over each page's dark hero / banner (not sticky) */
+  /* Navigation (ARC style): fixed, transparent over the hero; .scrolled = solid navy bar (ARC colours) */
+  .site-nav {
+    padding: 18px 24px;
+    transition: all 0.5s ease;
+  }
+
+  .site-nav.scrolled {
+    /* same deep navy as arcrealty.io */
+    background: rgba(11, 26, 53, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(198, 153, 58, 0.2);
+    padding: 12px 24px;
+  }
+
+  @screen md {
+    .site-nav {
+      padding: 28px 70px;
+    }
+
+    .site-nav.scrolled {
+      padding: 18px 70px;
+    }
+  }
+
   .nav-link {
-    @apply relative text-xs font-medium uppercase transition-colors duration-300;
-    letter-spacing: 0.22em;
+    @apply relative font-medium uppercase transition-colors duration-300;
+    font-size: 11px;
+    letter-spacing: 2.5px;
     color: rgba(250, 247, 240, 0.85);
   }
 
   .nav-link::after {
     content: '';
     @apply absolute left-0 h-px bg-gold-500;
-    bottom: -6px;
+    bottom: -5px;
     width: 0;
     transition: width 0.35s ease;
   }
@@ -71,14 +96,17 @@
   }
 
   .nav-cta {
-    @apply inline-flex items-center border border-gold-500 text-gold-400 px-6 py-3 text-[11px] font-semibold uppercase transition-all duration-300 hover:bg-gold-500 hover:text-obsidian-950;
-    letter-spacing: 0.2em;
+    @apply inline-flex items-center border border-gold-500 text-gold-500 uppercase transition-all duration-300 hover:bg-gold-500 hover:text-obsidian-950;
+    padding: 11px 28px;
+    font-size: 10px;
+    letter-spacing: 2.5px;
   }
 
   /* Hero typography (home page) */
   .hero-eyebrow {
-    @apply inline-flex items-center gap-4 text-[10px] sm:text-[11px] font-medium uppercase text-gold-300;
+    @apply inline-flex items-center gap-4 text-[10px] sm:text-[11px] font-semibold uppercase text-gold-300;
     letter-spacing: 0.2em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   }
 
   /* Gold rules either side of the eyebrow - only where it fits on one line */
@@ -96,21 +124,24 @@
 
   .hero-title {
     font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-    @apply font-light text-pearl-50;
+    @apply font-normal text-pearl-50;
     font-size: clamp(2.5rem, 5.2vw, 5.25rem);
     line-height: 1.08;
     letter-spacing: -0.01em;
-    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.55), 0 4px 24px rgba(0, 0, 0, 0.6);
   }
 
   .hero-title em {
-    @apply block italic bg-clip-text text-transparent bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500;
+    @apply block italic bg-clip-text text-transparent bg-gradient-to-r from-gold-200 via-gold-300 to-gold-400;
+    /* gradient text can't take text-shadow, so shadow the shape instead */
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.7)) drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
   }
 
   .hero-tagline {
-    @apply text-[10px] sm:text-xs font-light uppercase leading-relaxed;
+    @apply text-[10px] sm:text-xs font-normal uppercase leading-relaxed;
     letter-spacing: 0.18em;
-    color: rgba(250, 247, 240, 0.75);
+    color: rgba(250, 247, 240, 0.9);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
   }
 
   @screen sm {

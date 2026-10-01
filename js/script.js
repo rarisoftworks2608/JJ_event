@@ -101,6 +101,14 @@ function initDynamicConfig() {
  * Mobile Navigation Menu & Sticky Header
  */
 function initNavigation() {
+  // ARC-style navbar: transparent over the hero, solid navy bar once the page is scrolled
+  const header = document.getElementById('main-header');
+  if (header) {
+    const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 60);
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+  }
+
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
