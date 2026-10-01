@@ -1,0 +1,6 @@
+# Dependencies (reinstall with: npm install)
+node_modules/
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db

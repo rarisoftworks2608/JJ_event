@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "tailwindcss -i ./src/input.css -o ./css/style.css --watch",
     "build": "tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "images": "node scripts/optimize-images.mjs",
     "serve": "npx serve ."
   },
   "keywords": [
@@ -17,7 +18,7 @@
   "author": "Jai Jinendra Events",
   "license": "ISC",
   "devDependencies": {
+    "sharp": "^0.35.4",
     "tailwindcss": "^3.4.17"
   }
 }
-

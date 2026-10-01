@@ -8,68 +8,53 @@
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="icon" type="image/png" href="./public/images/logo.png">
+  <link rel="icon" type="image/png" href="./public/images/logo-nav.png">
 </head>
 <body class="bg-pearl-100 text-obsidian-950 font-sans selection:bg-primary-800 selection:text-gold-200">
 
-  <!-- Floating Glass Navigation Bar -->
-  <header id="main-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 py-2 sm:py-2.5 px-2 sm:px-3 lg:px-4">
-    <div class="w-full max-w-[97%] xl:max-w-[98%] 2xl:max-w-[1600px] mx-auto">
-      <div class="glass-nav rounded-2xl sm:rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
-        
-        <a href="index.html" class="flex items-center gap-3 group shrink-0">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-800 to-obsidian-950 flex items-center justify-center text-gold-400 shadow-md group-hover:scale-105 transition-transform duration-300 border border-gold-500/40">
-            <span class="font-display-title font-bold text-sm tracking-wider">JJ</span>
-          </div>
-          <div>
-            <span class="font-display-title text-base sm:text-xl font-bold tracking-tight text-obsidian-950 group-hover:text-primary-800 transition-colors block">
-              JAI JINENDRA <span class="text-gold-600 font-normal">EVENTS</span>
-            </span>
-            <span class="text-[9px] tracking-[0.22em] uppercase font-bold text-stone-500 block -mt-0.5">
-              Royal Atelier • Est. 2026
-            </span>
-          </div>
-        </a>
+  <!-- Full-width transparent navigation over the page's dark hero (scrolls away with the page) -->
+  <header id="main-header" class="absolute top-0 inset-x-0 z-50">
+    <div class="w-full px-5 sm:px-8 lg:px-12 xl:px-[70px] h-20 sm:h-24 flex items-center justify-between gap-6">
 
-        <nav class="hidden lg:flex items-center gap-8 text-xs font-bold tracking-wider uppercase text-stone-700">
-          <a href="index.html" class="hover:text-primary-800 hover:border-b-2 hover:border-gold-500 pb-0.5 transition-all">Home</a>
-          <a href="about.html" class="hover:text-primary-800 hover:border-b-2 hover:border-gold-500 pb-0.5 transition-all">About Us</a>
-          <a href="services.html" class="text-primary-800 font-bold border-b-2 border-primary-800 pb-0.5 flex items-center gap-1.5">
-            <span>Services</span>
-            <span class="px-1.5 py-0.5 text-[10px] bg-gold-100 text-gold-800 rounded-full font-bold">13</span>
-          </a>
-          <a href="gallery.html" class="hover:text-primary-800 hover:border-b-2 hover:border-gold-500 pb-0.5 transition-all">Gallery</a>
-          <a href="contact.html" class="hover:text-primary-800 hover:border-b-2 hover:border-gold-500 pb-0.5 transition-all">Contact</a>
-        </nav>
+      <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="Jai Jinendra Events - Home">
+        <img src="./public/images/logo-nav.png" alt="" width="56" height="56" class="w-12 h-12 sm:w-14 sm:h-14">
+        <span class="leading-none">
+          <span class="block font-display-title text-base sm:text-xl font-semibold tracking-[0.06em] text-pearl-50">JAI JINENDRA</span>
+          <span class="block text-[9px] sm:text-[10px] tracking-[0.5em] uppercase text-gold-400 mt-1.5">Events</span>
+        </span>
+      </a>
 
-        <div class="hidden sm:flex items-center gap-3 shrink-0">
-          <a href="contact.html" class="btn-maroon-luxury text-xs py-2.5 px-6 shadow-sm">
-            <span>Book Consultation</span>
-          </a>
-        </div>
+      <nav class="hidden lg:flex items-center gap-10 xl:gap-12" aria-label="Main">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link is-active" aria-current="page">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
 
-        <button id="mobile-menu-btn" type="button" aria-label="Open Menu" class="lg:hidden p-2.5 rounded-xl text-obsidian-900 hover:bg-stone-100 transition-colors">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <div class="flex items-center gap-4 shrink-0">
+        <a href="contact.html" class="hidden sm:inline-flex nav-cta">Book Consultation</a>
+        <button id="mobile-menu-btn" type="button" aria-label="Open Menu" class="lg:hidden p-2 -mr-2 text-pearl-50 hover:text-gold-300 transition-colors">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.5" d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
-
       </div>
+
     </div>
+    <div class="h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent"></div>
   </header>
 
   <!-- Mobile Drawer -->
-  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/70 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"></div>
-  <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white z-50 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
-    <div class="p-5 flex items-center justify-between border-b border-stone-100 bg-obsidian-950 text-white">
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/70 z-[60] hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white z-[60] shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div class="nav-surface p-5 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-800 to-obsidian-950 flex items-center justify-center text-gold-400 font-display-title font-bold text-xs border border-gold-500/40">
-          JJ
-        </div>
+        <img src="./public/images/logo-nav.png" alt="" width="40" height="40" class="w-10 h-10">
         <div>
-          <div class="font-display-title text-sm font-bold text-gold-300">JAI JINENDRA EVENTS</div>
-          <div class="text-[9px] text-stone-400 tracking-widest uppercase">Est. 2026 • Royal Celebrations</div>
+          <div class="font-display-title text-sm font-bold text-obsidian-950">JAI JINENDRA <span class="text-gold-600 font-normal">EVENTS</span></div>
+          <div class="text-[9px] text-stone-500 tracking-widest uppercase">Est. 2026 • Royal Celebrations</div>
         </div>
       </div>
-      <button id="mobile-menu-close" type="button" class="p-2 text-stone-400 hover:text-white rounded-lg">
+      <button id="mobile-menu-close" type="button" aria-label="Close Menu" class="p-2 text-stone-500 hover:text-obsidian-950 rounded-lg">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
@@ -139,14 +124,13 @@
   </div>
 
   <!-- Page Header Banner with Balanced Spacing -->
-  <section class="pt-28 sm:pt-32 pb-14 sm:pb-18 bg-obsidian-950 text-white relative overflow-hidden text-center">
-    <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80');"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/80 to-obsidian-950/90"></div>
+  <section class="pt-36 sm:pt-44 pb-20 sm:pb-24 bg-obsidian-950 text-white relative overflow-hidden text-center">
+    <!-- Our own event photo, clearly visible under a soft overlay -->
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./public/optimized/wedding/05-1920.jpg');"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(10,12,14,0.82)_0%,rgba(10,12,14,0.55)_50%,rgba(10,12,14,0.75)_100%)]"></div>
+    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-obsidian-950/80 to-transparent"></div>
     
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-gold-400/30 text-gold-300 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
-        <span>✨ 13 In-House Services</span>
-      </div>
       <h1 class="font-display-title text-3xl sm:text-5xl font-bold tracking-tight text-white">
         Curated Event Capabilities
       </h1>
@@ -162,7 +146,7 @@
       
       <!-- 01. Wedding Decorations & Full Management -->
       <div id="wedding-decorations" class="luxury-card flex flex-col justify-between border-t-4 border-t-primary-800">
-        <img src="./public/gallery/wedding/012.jpg" alt="Wedding Decorations & Full Management" class="w-full aspect-[3/2] object-cover">
+        <img src="./public/optimized/wedding/012-640.jpg" srcset="./public/optimized/wedding/012-640.jpg 640w, ./public/optimized/wedding/012-1280.jpg 1280w" sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc(33vw - 32px), (min-width: 768px) calc(50vw - 40px), calc(100vw - 32px)" width="1920" height="1280" alt="Wedding Decorations & Full Management" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -194,7 +178,7 @@
 
       <!-- 02. Baby Shower & Dohale Jevan -->
       <div id="baby-shower" class="luxury-card flex flex-col justify-between border-t-4 border-t-gold-500">
-        <img src="./public/gallery/baby-shower/IMG_9631.JPG" alt="Baby Shower & Dohale Jevan" class="w-full aspect-[3/2] object-cover">
+        <img src="./public/optimized/baby-shower/img-9631-640.jpg" srcset="./public/optimized/baby-shower/img-9631-640.jpg 640w, ./public/optimized/baby-shower/img-9631-1280.jpg 1280w" sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc(33vw - 32px), (min-width: 768px) calc(50vw - 40px), calc(100vw - 32px)" width="1920" height="1280" alt="Baby Shower & Dohale Jevan" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -226,7 +210,7 @@
 
       <!-- 03. Birthday Events -->
       <div id="birthday-events" class="luxury-card flex flex-col justify-between border-t-4 border-t-primary-800">
-        <img src="./public/gallery/birthday/DSC_1182.JPG" alt="Birthday Events & Jubilees" class="w-full aspect-[3/2] object-cover">
+        <img src="./public/optimized/birthday/dsc-1182-640.jpg" srcset="./public/optimized/birthday/dsc-1182-640.jpg 640w, ./public/optimized/birthday/dsc-1182-1280.jpg 1280w" sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc(33vw - 32px), (min-width: 768px) calc(50vw - 40px), calc(100vw - 32px)" width="1920" height="1280" alt="Birthday Events & Jubilees" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -258,7 +242,7 @@
 
       <!-- 04. Engagement -->
       <div id="engagement" class="luxury-card flex flex-col justify-between border-t-4 border-t-gold-500">
-        <img src="https://images.unsplash.com/photo-1780303864944-737d88c789f4?auto=format&fit=crop&w=800&q=80" alt="Engagement & Ring Ceremonies" class="w-full aspect-[3/2] object-cover">
+        <img src="./public/optimized/pre-wedding/tws00595-enhanced-nr-640.jpg" srcset="./public/optimized/pre-wedding/tws00595-enhanced-nr-640.jpg 640w, ./public/optimized/pre-wedding/tws00595-enhanced-nr-1280.jpg 1280w" sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc(33vw - 32px), (min-width: 768px) calc(50vw - 40px), calc(100vw - 32px)" width="1920" height="1280" alt="Engagement & Ring Ceremonies" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -290,7 +274,7 @@
 
       <!-- 05. Corporate Events -->
       <div id="corporate-events" class="luxury-card flex flex-col justify-between border-t-4 border-t-stone-800">
-        <img src="./public/gallery/corporate/DSC_0826.JPG" alt="Corporate Events & Conferences" class="w-full aspect-[3/2] object-cover">
+        <img src="./public/optimized/corporate/dsc-0857-640.jpg" srcset="./public/optimized/corporate/dsc-0857-640.jpg 640w, ./public/optimized/corporate/dsc-0857-1280.jpg 1280w" sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc(33vw - 32px), (min-width: 768px) calc(50vw - 40px), calc(100vw - 32px)" width="1920" height="1280" alt="Corporate Events & Conferences" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -322,7 +306,7 @@
 
       <!-- 06. Catering Services (All Types) -->
       <div id="catering-services" class="luxury-card flex flex-col justify-between border-t-4 border-t-gold-500">
-        <img src="https://images.unsplash.com/photo-1738202321539-9ed4a727f735?auto=format&fit=crop&w=800&q=80" alt="Catering Services (All Types)" class="w-full aspect-[3/2] object-cover">
+        <img src="https://images.unsplash.com/photo-1738202321539-9ed4a727f735?auto=format&fit=crop&w=1200&q=85" alt="Catering Services (All Types)" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -354,7 +338,7 @@
 
       <!-- 07. Anchoring / MC Services -->
       <div id="anchoring-mc" class="luxury-card flex flex-col justify-between border-t-4 border-t-primary-800">
-        <img src="https://images.unsplash.com/photo-1580188928585-0ef5c1a5c4dd?auto=format&fit=crop&w=800&q=80" alt="Anchoring / MC Services" class="w-full aspect-[3/2] object-cover">
+        <img src="./public/optimized/birthday/rnp-4132-640.jpg" srcset="./public/optimized/birthday/rnp-4132-640.jpg 640w, ./public/optimized/birthday/rnp-4132-1280.jpg 1280w" sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc(33vw - 32px), (min-width: 768px) calc(50vw - 40px), calc(100vw - 32px)" width="1920" height="1280" alt="Anchoring / MC Services" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -386,7 +370,7 @@
 
       <!-- 08. LED Wall Setup -->
       <div id="led-wall-setup" class="luxury-card flex flex-col justify-between border-t-4 border-t-stone-800">
-        <img src="https://images.unsplash.com/photo-1571839154183-6bb84a567903?auto=format&fit=crop&w=800&q=80" alt="LED Wall Setup (P2.5 / P3)" class="w-full aspect-[3/2] object-cover">
+        <img src="./public/optimized/corporate/dsc-0826-640.jpg" srcset="./public/optimized/corporate/dsc-0826-640.jpg 640w, ./public/optimized/corporate/dsc-0826-1280.jpg 1280w" sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc(33vw - 32px), (min-width: 768px) calc(50vw - 40px), calc(100vw - 32px)" width="1920" height="1280" alt="LED Wall Setup (P2.5 / P3)" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -418,7 +402,7 @@
 
       <!-- 09. Crane Services (Jimmy Jib) -->
       <div id="crane-services" class="luxury-card flex flex-col justify-between border-t-4 border-t-gold-500">
-        <img src="https://images.unsplash.com/photo-1752306004700-6ca435c75004?auto=format&fit=crop&w=800&q=80" alt="Crane Services (Jimmy Jib 24-40ft)" class="w-full aspect-[3/2] object-cover">
+        <img src="https://images.unsplash.com/photo-1752306004700-6ca435c75004?auto=format&fit=crop&w=1200&q=85" alt="Crane Services (Jimmy Jib 24-40ft)" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -450,7 +434,7 @@
 
       <!-- 10. Drone Services -->
       <div id="drone-services" class="luxury-card flex flex-col justify-between border-t-4 border-t-primary-800">
-        <img src="https://images.unsplash.com/photo-1456615913800-c33540eac399?auto=format&fit=crop&w=800&q=80" alt="Drone Aerial Cinematography" class="w-full aspect-[3/2] object-cover">
+        <img src="https://images.unsplash.com/photo-1456615913800-c33540eac399?auto=format&fit=crop&w=1200&q=85" alt="Drone Aerial Cinematography" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -482,7 +466,7 @@
 
       <!-- 11. YouTube & Facebook Live Streaming -->
       <div id="live-streaming" class="luxury-card flex flex-col justify-between border-t-4 border-t-stone-800">
-        <img src="https://images.unsplash.com/photo-1575507479993-7bb702d5e966?auto=format&fit=crop&w=800&q=80" alt="Live Streaming (YouTube & Facebook)" class="w-full aspect-[3/2] object-cover">
+        <img src="https://images.unsplash.com/photo-1575507479993-7bb702d5e966?auto=format&fit=crop&w=1200&q=85" alt="Live Streaming (YouTube & Facebook)" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -514,7 +498,7 @@
 
       <!-- 12. Photography & Cinematography -->
       <div id="photography-cinematography" class="luxury-card flex flex-col justify-between border-t-4 border-t-gold-500">
-        <img src="https://images.unsplash.com/photo-1551780165-f2a8e6d86eb8?auto=format&fit=crop&w=800&q=80" alt="Photography & Cinematography" class="w-full aspect-[3/2] object-cover">
+        <img src="./public/optimized/pre-pregnancy/dsc00621-640.jpg" srcset="./public/optimized/pre-pregnancy/dsc00621-640.jpg 640w, ./public/optimized/pre-pregnancy/dsc00621-1280.jpg 1280w" sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc(33vw - 32px), (min-width: 768px) calc(50vw - 40px), calc(100vw - 32px)" width="1280" height="1920" alt="Photography & Cinematography" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover object-[center_80%]">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -546,7 +530,7 @@
 
       <!-- 13. Reels / Short-Form Video Content -->
       <div id="reels-content" class="luxury-card flex flex-col justify-between border-t-4 border-t-primary-800">
-        <img src="https://images.unsplash.com/photo-1697649272441-be6e4a563e9b?auto=format&fit=crop&w=800&q=80" alt="Reels & Short-Form Video Content" class="w-full aspect-[3/2] object-cover">
+        <img src="./public/optimized/birthday/dsc-4181-640.jpg" srcset="./public/optimized/birthday/dsc-4181-640.jpg 640w, ./public/optimized/birthday/dsc-4181-1280.jpg 1280w" sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc(33vw - 32px), (min-width: 768px) calc(50vw - 40px), calc(100vw - 32px)" width="1920" height="1280" alt="Reels & Short-Form Video Content" loading="lazy" decoding="async" class="w-full aspect-[3/2] object-cover">
         <div class="p-8 flex flex-col justify-between flex-1">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -605,7 +589,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
         <div class="space-y-4">
           <div class="flex items-center gap-3">
-            <img src="./public/images/logo.png" alt="Jai Jinendra Events Logo" class="w-9 h-9 rounded-full object-cover shadow-gold-glow">
+            <img src="./public/images/logo-nav.png" alt="Jai Jinendra Events Logo" width="40" height="40" class="w-10 h-10">
             <div>
               <span class="font-display-title text-lg font-bold text-white block">Jai Jinendra Events</span>
               <span class="text-[9px] tracking-widest text-gold-400 uppercase font-semibold block">Est. 2026</span>
@@ -685,13 +669,13 @@
   </footer>
 
   <!-- Floating WhatsApp Action Button (Tooltip Positioned Above Icon) -->
-  <a href="https://wa.me/919021702266" data-config-href="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-5 right-5 z-50 group flex flex-col items-center">
+  <a href="https://wa.me/919021702266" data-config-href="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50 group flex flex-col items-center">
     <div class="hidden sm:block absolute bottom-full mb-3 right-0 bg-white text-obsidian-950 text-xs font-semibold py-1.5 px-3 rounded-xl shadow-xl border border-stone-200 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap">
       💬 Chat with Event Team
       <span class="absolute -bottom-1 right-5 w-2.5 h-2.5 bg-white rotate-45 border-b border-r border-stone-200"></span>
     </div>
-    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 whatsapp-pulse">
-      <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.316 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.818-.981z"/></svg>
+    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 whatsapp-pulse">
+      <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.316 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.818-.981z"/></svg>
     </div>
   </a>
 

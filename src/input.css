@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -42,10 +42,100 @@
     @apply bg-obsidian-900/80 backdrop-blur-xl border border-white/10 text-white shadow-2xl;
   }
 
-  .glass-nav {
+  /* Full-width transparent navigation over each page's dark hero / banner (not sticky) */
+  .nav-link {
+    @apply relative text-xs font-medium uppercase transition-colors duration-300;
+    letter-spacing: 0.22em;
+    color: rgba(250, 247, 240, 0.85);
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 h-px bg-gold-500;
+    bottom: -6px;
+    width: 0;
+    transition: width 0.35s ease;
+  }
+
+  .nav-link:hover {
+    @apply text-gold-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.is-active::after {
+    width: 100%;
+  }
+
+  .nav-link.is-active {
+    @apply text-gold-400;
+  }
+
+  .nav-cta {
+    @apply inline-flex items-center border border-gold-500 text-gold-400 px-6 py-3 text-[11px] font-semibold uppercase transition-all duration-300 hover:bg-gold-500 hover:text-obsidian-950;
+    letter-spacing: 0.2em;
+  }
+
+  /* Hero typography (home page) */
+  .hero-eyebrow {
+    @apply inline-flex items-center gap-4 text-[10px] sm:text-[11px] font-medium uppercase text-gold-300;
+    letter-spacing: 0.2em;
+  }
+
+  /* Gold rules either side of the eyebrow - only where it fits on one line */
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '';
+    @apply hidden sm:block h-px w-12 bg-gold-500 shrink-0;
+  }
+
+  @screen sm {
+    .hero-eyebrow {
+      letter-spacing: 0.3em;
+    }
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    @apply font-light text-pearl-50;
+    font-size: clamp(2.5rem, 5.2vw, 5.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  .hero-title em {
+    @apply block italic bg-clip-text text-transparent bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500;
+  }
+
+  .hero-tagline {
+    @apply text-[10px] sm:text-xs font-light uppercase leading-relaxed;
+    letter-spacing: 0.18em;
+    color: rgba(250, 247, 240, 0.75);
+  }
+
+  @screen sm {
+    .hero-tagline {
+      letter-spacing: 0.3em;
+    }
+  }
+
+  .btn-hero-gold {
+    @apply inline-flex items-center justify-center bg-gradient-to-br from-gold-500 to-gold-700 text-pearl-50 px-10 py-4 text-[11px] font-semibold uppercase transition-all duration-300 hover:-translate-y-0.5;
+    letter-spacing: 0.22em;
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.35);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+
+  .btn-hero-ghost {
+    @apply inline-flex items-center justify-center border px-10 py-4 text-[11px] font-semibold uppercase text-pearl-50 transition-all duration-300 hover:border-gold-400 hover:text-gold-300;
+    border-color: rgba(250, 247, 240, 0.45);
+    letter-spacing: 0.22em;
+  }
+
+  /* Mobile menu header in the same ivory & gold as the navigation bar */
+  .nav-surface {
     background: linear-gradient(135deg, #FFFDF9 0%, #FAF3E2 50%, #FFFDF9 100%);
-    border: 1px solid rgba(212, 175, 55, 0.55);
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.16), 0 0 20px -2px rgba(212, 175, 55, 0.25);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.55);
   }
 
   /* Luxury Buttons */
@@ -70,22 +160,79 @@
     @apply relative rounded-3xl bg-white border border-pearl-300/80 shadow-luxury hover:shadow-luxury-hover transition-all duration-500 hover:-translate-y-2 overflow-hidden;
   }
 
-  /* Gallery Item Overlay */
+  /* Gallery Photo Card - the photo sits inside a thin frame, shown complete:
+     no cropping, no zoom, and its corners are never rounded off */
   .gallery-item {
-    @apply relative overflow-hidden rounded-2xl cursor-pointer shadow-md bg-stone-900;
+    @apply relative block cursor-pointer rounded-lg sm:rounded-xl bg-white p-1 sm:p-2 shadow-luxury;
+  }
+
+  .gallery-item img {
+    @apply block w-full h-auto bg-stone-100;
   }
 
   .gallery-overlay {
-    @apply absolute inset-0 bg-gradient-to-t from-obsidian-950/95 via-obsidian-950/40 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6 text-white;
-  }
-  
-  .gallery-item:hover .gallery-overlay {
-    opacity: 1;
+    @apply absolute inset-1 sm:inset-2 bg-gradient-to-t from-obsidian-950/85 via-obsidian-950/10 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-5 text-white pointer-events-none;
   }
 
-  .gallery-item:hover img {
-    transform: scale(1.06);
+  /* Caption overlay only on devices with a real mouse - on phones a tap would
+     otherwise leave the photo stuck behind the dark overlay */
+  @media (hover: hover) {
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
   }
+
+  /* Film cards (gallery.html#films) - every card the same size, gold border, lifts & glows on hover */
+  .film-card {
+    @apply relative flex flex-col h-full w-full rounded-xl sm:rounded-2xl bg-white p-1.5 sm:p-2 border border-gold-300 shadow-luxury transition-all duration-500;
+  }
+
+  .film-card:hover {
+    @apply -translate-y-2 border-gold-500;
+    box-shadow: 0 24px 48px -18px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(212, 175, 55, 0.5), 0 0 30px -4px rgba(212, 175, 55, 0.45);
+  }
+
+  .film-frame {
+    @apply relative block w-full aspect-[4/5] overflow-hidden rounded-xl bg-obsidian-900;
+  }
+
+  .film-play {
+    @apply relative flex w-12 h-12 sm:w-20 sm:h-20 items-center justify-center rounded-full bg-gold-500 text-obsidian-950 shadow-gold-glow transition-transform duration-300;
+  }
+
+  .film-card:hover .film-play {
+    transform: scale(1.1);
+  }
+
+  /* Pulsing gold ring around the play button */
+  .film-play::before {
+    content: '';
+    @apply absolute inset-0 rounded-full border-2 border-gold-400;
+    animation: film-pulse 2s ease-out infinite;
+  }
+
+  /* Pop-up player: sized to each video's own shape (tall reels / wide films) */
+  .film-player-video {
+    @apply block bg-black rounded-xl shadow-2xl;
+    max-width: 92vw;
+    max-height: 82vh;
+  }
+
+  .film-player-embed {
+    @apply block bg-black rounded-xl shadow-2xl border-0;
+    width: min(92vw, calc(82vh * 16 / 9));
+    aspect-ratio: 16 / 9;
+  }
+
+  .film-player-embed.is-vertical {
+    width: min(92vw, calc(82vh * 9 / 16));
+    aspect-ratio: 9 / 16;
+  }
+}
+
+@keyframes film-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
 }
 
 /* Animations */
@@ -93,12 +240,17 @@
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll:not(.revealed) {
   will-change: opacity, transform;
 }
 
+/* transform: none (not translateY(0)) so revealed photos are not kept on a
+   GPU layer, which can render them slightly soft */
 .reveal-on-scroll.revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* WhatsApp Floating Pulse */

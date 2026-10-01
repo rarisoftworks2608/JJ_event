@@ -251,7 +251,8 @@ const SITE_CONFIG = {
   ],
 
   // Gallery categories and photo items
-  // NOTE FOR USER: Add your photos to /public/gallery/<category>/ and list their filenames below!
+  // NOTE FOR USER: Add your photos to /public/gallery/<category>/ and list their filenames below,
+  // then run `npm run images` so the site gets sharp, fast-loading web copies of them.
   galleryCategories: [
     { id: "all", name: "All Celebrations" },
     { id: "wedding", name: "Wedding", folder: "wedding" },
@@ -1117,6 +1118,56 @@ const SITE_CONFIG = {
       title: "Conference & Stage Production",
       description: "High-definition AV and stage production for a corporate gathering.",
       image: "./public/gallery/corporate/DSC_0857.JPG"
+    }
+  ],
+
+  // Films shown in the "Wedding Films" section of gallery.html
+  videoCategories: [
+    { id: "pre-wedding", name: "Pre-Wedding Films" },
+    { id: "wedding-highlights", name: "Wedding Highlights" }
+  ],
+
+  // NOTE FOR USER: Paste the video link in `url`. Supported:
+  //   - YouTube:       "https://youtu.be/VIDEO_ID"  or  "https://www.youtube.com/watch?v=VIDEO_ID"  or a /shorts/ link
+  //   - Google Drive:  "https://drive.google.com/file/d/FILE_ID/view"  (file must be shared as "Anyone with the link")
+  //   - Vimeo:         "https://vimeo.com/VIDEO_ID"
+  //   - Your own file: "./public/videos/my-film.mp4"
+  //   - Instagram reels open on Instagram in a new tab
+  // Set vertical: true for Reels / Shorts (9:16) so they play full-height and are never cropped.
+  // `poster` (optional) is a cover image, e.g. "./public/gallery/pre-wedding/TWS00556-Enhanced-NR.jpg".
+  // YouTube and Google Drive films pick up their own cover automatically.
+  videos: [
+    {
+      category: "pre-wedding",
+      title: "Every Day Is a New Adventure",
+      description: "A traditional pre-wedding couple shoot against a marigold and floral backdrop.",
+      url: "./public/videos/prewedding-traditional-couple.mp4",
+      poster: "./public/videos/prewedding-traditional-couple.jpg",
+      vertical: true
+    },
+    {
+      category: "pre-wedding",
+      title: "Vaishnavi & Parag",
+      description: "An evening pre-wedding shoot full of candid, romantic moments.",
+      url: "./public/videos/prewedding-vaishnavi-parag.mp4",
+      poster: "./public/videos/prewedding-vaishnavi-parag.jpg",
+      vertical: true
+    },
+    {
+      category: "wedding-highlights",
+      title: "Engagement Highlight Film",
+      description: "The complete engagement celebration - rituals, family and the couple - in one cinematic film.",
+      url: "./public/videos/engagement-highlight-film.mp4",
+      poster: "./public/videos/engagement-highlight-film.jpg",
+      vertical: false
+    },
+    {
+      category: "wedding-highlights",
+      title: "A Grand Welcome for the Bride-to-Be",
+      description: "Home welcome décor for the bride - floral entrance, rangoli and a 'Will You Marry Me' stage.",
+      url: "./public/videos/bride-to-be-welcome-decor.mp4",
+      poster: "./public/videos/bride-to-be-welcome-decor.jpg",
+      vertical: true
     }
   ],
 

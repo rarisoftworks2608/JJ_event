@@ -8,8 +8,9 @@
  * 3. Scroll reveal animations
  * 4. Interactive Hero slider
  * 5. Gallery filter system & Lightbox modal with next/prev/keyboard controls
- * 6. Contact form -> WhatsApp instant generator & mailto dispatcher
- * 7. Service pre-selection link handler
+ * 6. Wedding Films section (pre-wedding films & wedding highlights)
+ * 7. Contact form -> WhatsApp instant generator & mailto dispatcher
+ * 8. Service pre-selection link handler
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,9 +19,45 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollEffects();
   initHeroSlider();
   initGalleryAndLightbox();
+  initGalleryCounts();
+  initFilms();
   initContactForm();
   initServicePreselection();
 });
+
+/**
+ * Optimized web copies of a gallery photo (built by `npm run images` into js/image-manifest.js).
+ * Falls back to the original file if the photo has not been optimized yet.
+ */
+function getOptimizedImage(originalPath) {
+  const manifest = window.IMAGE_MANIFEST || {};
+  const entry = manifest[decodeURIComponent(originalPath).replace(/^\.\//, '')];
+  if (!entry) {
+    return { src: originalPath, srcset: '', width: 0, height: 0 };
+  }
+  const variants = entry.srcset;
+  const medium = variants[Math.min(1, variants.length - 1)];
+  return {
+    src: `./${medium[1]}`,
+    srcset: variants.map(([width, file]) => `./${file} ${width}w`).join(', '),
+    width: entry.w,
+    height: entry.h
+  };
+}
+
+// Swap the active styling between a row of pill buttons (gallery & film filters)
+function setActivePill(pills, activePill) {
+  const activeClasses = ['bg-primary-800', 'text-white', 'shadow-maroon-glow'];
+  const inactiveClasses = ['bg-white', 'text-stone-700', 'hover:bg-gold-50', 'border', 'border-stone-200'];
+  pills.forEach(pill => {
+    pill.classList.remove(...activeClasses);
+    pill.classList.add(...inactiveClasses);
+    pill.setAttribute('aria-pressed', 'false');
+  });
+  activePill.classList.add(...activeClasses);
+  activePill.classList.remove(...inactiveClasses);
+  activePill.setAttribute('aria-pressed', 'true');
+}
 
 /**
  * Hydrate dynamic business information from SITE_CONFIG into DOM elements
@@ -64,22 +101,10 @@ function initDynamicConfig() {
  * Mobile Navigation Menu & Sticky Header
  */
 function initNavigation() {
-  const header = document.getElementById('main-header');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
   const mobileMenuClose = document.getElementById('mobile-menu-close');
-
-  // Sticky Header elevation on scroll
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        header.classList.add('shadow-md');
-      } else {
-        header.classList.remove('shadow-md');
-      }
-    });
-  }
 
   // Mobile Drawer Toggle
   function openMobileMenu() {
@@ -231,6 +256,24 @@ function initHeroSlider() {
 let currentLightboxIndex = 0;
 let activeGalleryList = [];
 
+// Rendered photo width in the masonry grid (3 / 2 / 1 columns) so the browser downloads the right size
+const GALLERY_GRID_SIZES = '(min-width: 1280px) 375px, (min-width: 1024px) calc(33vw - 53px), (min-width: 640px) calc(50vw - 52px), calc(50vw - 30px)';
+
+// "All" view: alternate between categories so it opens with a mix of every event type
+function interleaveByCategory(items) {
+  const groups = SITE_CONFIG.galleryCategories
+    .filter(cat => cat.id !== 'all')
+    .map(cat => items.filter(item => item.category === cat.id));
+  const longest = Math.max(0, ...groups.map(group => group.length));
+  const mixed = [];
+  for (let i = 0; i < longest; i++) {
+    groups.forEach(group => {
+      if (group[i]) mixed.push(group[i]);
+    });
+  }
+  return mixed;
+}
+
 function initGalleryAndLightbox() {
   const galleryGrid = document.getElementById('gallery-grid');
   const filterTabs = document.querySelectorAll('.gallery-filter-btn');
@@ -243,9 +286,9 @@ function initGalleryAndLightbox() {
   // Render gallery items dynamically
   function renderGallery(category = 'all') {
     galleryGrid.innerHTML = '';
-    
-    const filtered = category === 'all' 
-      ? SITE_CONFIG.galleryItems 
+
+    const filtered = category === 'all'
+      ? interleaveByCategory(SITE_CONFIG.galleryItems)
       : SITE_CONFIG.galleryItems.filter(item => item.category.toLowerCase() === category.toLowerCase());
 
     activeGalleryList = filtered;
@@ -265,21 +308,24 @@ function initGalleryAndLightbox() {
 
     filtered.forEach((item, index) => {
       const card = document.createElement('div');
-      card.className = 'gallery-item reveal-on-scroll relative group overflow-hidden rounded-2xl shadow-card bg-stone-100 cursor-pointer break-inside-avoid mb-6';
+      card.className = 'gallery-item reveal-on-scroll break-inside-avoid mb-3 sm:mb-6';
       card.setAttribute('data-category', item.category);
       card.setAttribute('data-index', index);
 
       // Category display name
       const catObj = SITE_CONFIG.galleryCategories.find(c => c.id === item.category);
       const catName = catObj ? catObj.name : item.category;
+      const photo = getOptimizedImage(item.image);
 
+      // width/height reserve the photo's real shape so the grid never jumps or crops while loading
       card.innerHTML = `
-        <img 
-          src="${item.image}" 
-          alt="${item.title}" 
-          loading="lazy" 
-          class="w-full h-auto block group-hover:scale-105 transition-transform duration-700 ease-out"
-          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80';"
+        <img
+          src="${photo.src}"
+          ${photo.srcset ? `srcset="${photo.srcset}" sizes="${GALLERY_GRID_SIZES}"` : ''}
+          ${photo.width ? `width="${photo.width}" height="${photo.height}"` : ''}
+          alt="${item.title}"
+          loading="lazy"
+          decoding="async"
         />
         <div class="gallery-overlay">
           <span class="inline-block self-start px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-gold-300 bg-primary-900/80 rounded-full mb-2 backdrop-blur-sm border border-gold-400/30">
@@ -298,6 +344,18 @@ function initGalleryAndLightbox() {
         </div>
       `;
 
+      // If the optimized copy is missing, fall back to the original photo; hide the card only if that fails too
+      const img = card.querySelector('img');
+      img.addEventListener('error', () => {
+        if (img.dataset.triedOriginal) {
+          card.classList.add('hidden');
+          return;
+        }
+        img.dataset.triedOriginal = 'true';
+        img.removeAttribute('srcset');
+        img.src = item.image;
+      });
+
       card.addEventListener('click', () => {
         openLightbox(index);
       });
@@ -312,22 +370,19 @@ function initGalleryAndLightbox() {
   // Setup Category filter tabs
   filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const cat = tab.getAttribute('data-category');
-      
-      filterTabs.forEach(t => {
-        t.classList.remove('bg-primary-800', 'text-white', 'shadow-maroon');
-        t.classList.add('bg-white', 'text-charcoal-700', 'hover:bg-gold-50', 'border', 'border-gold-200');
-      });
-
-      tab.classList.add('bg-primary-800', 'text-white', 'shadow-maroon');
-      tab.classList.remove('bg-white', 'text-charcoal-700', 'hover:bg-gold-50', 'border', 'border-gold-200');
-
-      renderGallery(cat);
+      setActivePill(filterTabs, tab);
+      renderGallery(tab.getAttribute('data-category'));
     });
   });
 
-  // Initial render
-  renderGallery('all');
+  // Initial render - gallery.html?category=wedding opens straight on that category
+  const requestedCategory = new URLSearchParams(window.location.search).get('category');
+  const requestedTab = Array.from(filterTabs).find(tab => tab.getAttribute('data-category') === requestedCategory);
+  if (requestedTab) {
+    requestedTab.click();
+  } else {
+    renderGallery('all');
+  }
 
   // Lightbox functions
   const lightboxImg = document.getElementById('lightbox-image');
@@ -359,13 +414,46 @@ function initGalleryAndLightbox() {
     document.body.style.overflow = '';
   }
 
+  // On-screen width of a photo in the lightbox: fits 94vw x 78vh and is never enlarged beyond its real size
+  function lightboxDisplayWidth(photo) {
+    const fitToHeight = window.innerHeight * 0.78 * (photo.width / photo.height);
+    return Math.round(Math.min(window.innerWidth * 0.94, 1400, fitToHeight, photo.width));
+  }
+
+  function setLightboxSource(img, photo) {
+    img.removeAttribute('srcset');
+    if (photo.srcset) {
+      img.sizes = `${lightboxDisplayWidth(photo)}px`;
+      img.srcset = photo.srcset;
+    }
+    img.src = photo.src;
+  }
+
+  // Load the previous & next photos in the background so arrow navigation is instant
+  function preloadLightboxNeighbours() {
+    [1, -1].forEach(step => {
+      const neighbour = activeGalleryList[(currentLightboxIndex + step + activeGalleryList.length) % activeGalleryList.length];
+      if (neighbour) setLightboxSource(new Image(), getOptimizedImage(neighbour.image));
+    });
+  }
+
   function updateLightboxContent() {
     const item = activeGalleryList[currentLightboxIndex];
     if (!item) return;
 
     if (lightboxImg) {
-      lightboxImg.src = item.image;
+      const photo = getOptimizedImage(item.image);
+      // Dim until the sharp version has arrived so the old photo never sits under the new caption
+      lightboxImg.classList.add('opacity-40');
+      lightboxImg.onload = () => lightboxImg.classList.remove('opacity-40');
+      lightboxImg.onerror = () => {
+        lightboxImg.onerror = null;
+        lightboxImg.removeAttribute('srcset');
+        lightboxImg.src = item.image;
+      };
+      setLightboxSource(lightboxImg, photo);
       lightboxImg.alt = item.title;
+      preloadLightboxNeighbours();
     }
     if (lightboxTitle) lightboxTitle.textContent = item.title;
     if (lightboxDesc) lightboxDesc.textContent = item.description;
@@ -412,6 +500,194 @@ function initGalleryAndLightbox() {
     if (e.key === 'ArrowRight') showNextLightbox();
     if (e.key === 'ArrowLeft') showPrevLightbox();
   });
+}
+
+/**
+ * Live photo counts on the home page category tiles, e.g. <span data-gallery-count="wedding">
+ */
+function initGalleryCounts() {
+  if (typeof SITE_CONFIG === 'undefined') return;
+  document.querySelectorAll('[data-gallery-count]').forEach(el => {
+    const category = el.getAttribute('data-gallery-count');
+    const count = SITE_CONFIG.galleryItems.filter(item => item.category === category).length;
+    if (count) el.textContent = `${count} ${count === 1 ? 'photo' : 'photos'}`;
+  });
+}
+
+/**
+ * Wedding Films section (gallery.html#films) built from SITE_CONFIG.videos
+ */
+function parseVideoUrl(url) {
+  const youtube = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/))([\w-]{11})/);
+  if (youtube) {
+    return {
+      embed: `https://www.youtube-nocookie.com/embed/${youtube[1]}?autoplay=1&rel=0&playsinline=1`,
+      thumb: `https://i.ytimg.com/vi/${youtube[1]}/maxresdefault.jpg`,
+      thumbFallback: `https://i.ytimg.com/vi/${youtube[1]}/hqdefault.jpg`
+    };
+  }
+  const vimeo = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if (vimeo) {
+    return { embed: `https://player.vimeo.com/video/${vimeo[1]}?autoplay=1` };
+  }
+  const drive = url.match(/drive\.google\.com\/(?:file\/d\/|open\?id=)([\w-]+)/);
+  if (drive) {
+    return {
+      embed: `https://drive.google.com/file/d/${drive[1]}/preview`,
+      thumb: `https://drive.google.com/thumbnail?id=${drive[1]}&sz=w1280`
+    };
+  }
+  if (/\.(mp4|webm|mov)(\?|$)/i.test(url)) {
+    return { file: url };
+  }
+  return { external: url };
+}
+
+// Pop-up player shared by all film cards; each video opens at its own shape, uncropped
+function openFilmPlayer(video, source, poster) {
+  let modal = document.getElementById('film-player');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'film-player';
+    modal.className = 'fixed inset-0 z-[70] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-sm';
+    modal.innerHTML = `
+      <button type="button" aria-label="Close film" class="absolute top-4 right-4 sm:top-6 sm:right-6 p-2.5 rounded-full bg-white/10 hover:bg-white/25 text-white transition-colors">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div class="film-player-stage flex flex-col items-center"></div>
+    `;
+    document.body.appendChild(modal);
+    const close = () => {
+      modal.querySelector('.film-player-stage').innerHTML = '';  // stops playback
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    };
+    modal.querySelector('button').addEventListener('click', close);
+    modal.addEventListener('click', e => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) close(); });
+  }
+
+  const stage = modal.querySelector('.film-player-stage');
+  const player = source.file
+    ? `<video src="${source.file}" controls autoplay playsinline ${poster ? `poster="${poster}"` : ''} class="film-player-video"></video>`
+    : `<iframe src="${source.embed}" title="${video.title}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen class="film-player-embed ${video.vertical ? 'is-vertical' : ''}"></iframe>`;
+  stage.innerHTML = `${player}<p class="mt-4 font-serif text-lg text-white text-center">${video.title}</p>`;
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+
+function createFilmCard(video) {
+  const source = parseVideoUrl(video.url || '');
+  const poster = video.poster ? getOptimizedImage(video.poster).src : source.thumb;
+
+  // Every card is the same size; the cover fills a fixed 4:5 frame
+  const card = document.createElement('article');
+  card.className = 'reveal-on-scroll w-[calc(50%-0.5rem)] sm:w-[300px] lg:w-[320px]';
+  card.innerHTML = `
+    <div class="film-card">
+      <button type="button" class="film-frame" aria-label="Play film: ${video.title}">
+        <span class="absolute inset-0 bg-gradient-to-br from-primary-900 via-obsidian-950 to-obsidian-900"></span>
+        ${poster ? `<img src="${poster}" alt="" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">` : ''}
+        <span class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-black/20"></span>
+        <span class="absolute inset-0 flex items-center justify-center">
+          <span class="film-play">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </span>
+      </button>
+      <div class="px-2 pt-4 pb-2 flex-1">
+        <h3 class="font-serif text-sm sm:text-lg font-bold text-obsidian-950 line-clamp-2 sm:line-clamp-1">${video.title}</h3>
+        ${video.description ? `<p class="hidden sm:block text-stone-600 text-sm mt-1 leading-relaxed line-clamp-2 min-h-[2.75rem]">${video.description}</p>` : ''}
+      </div>
+    </div>
+  `;
+
+  const frame = card.querySelector('.film-frame');
+
+  // YouTube's HD cover is missing for some uploads (it returns a 120px placeholder) - use the standard one then
+  const posterImg = frame.querySelector('img');
+  if (posterImg) {
+    posterImg.addEventListener('load', () => {
+      if (posterImg.naturalWidth <= 120 && source.thumbFallback) posterImg.src = source.thumbFallback;
+    });
+    posterImg.addEventListener('error', () => {
+      if (source.thumbFallback && posterImg.src !== source.thumbFallback) {
+        posterImg.src = source.thumbFallback;
+      } else {
+        posterImg.remove();
+      }
+    });
+  }
+
+  if (source.external) {
+    frame.addEventListener('click', () => window.open(source.external, '_blank', 'noopener'));
+    return card;
+  }
+
+  // The video only loads when clicked, so the page stays fast
+  frame.addEventListener('click', () => openFilmPlayer(video, source, poster));
+
+  return card;
+}
+
+function initFilms() {
+  const filmsSection = document.getElementById('films');
+  const filmsGrid = document.getElementById('films-grid');
+  const filmTabs = document.querySelectorAll('.film-filter-btn');
+  if (!filmsSection || !filmsGrid || typeof SITE_CONFIG === 'undefined') return;
+
+  const videos = SITE_CONFIG.videos || [];
+
+  // Until the first film is added, show the photo gallery first and the films section after it
+  const photosSection = document.getElementById('photos');
+  if (!videos.length && photosSection) {
+    photosSection.after(filmsSection);
+  }
+
+  function renderFilms(category) {
+    const list = videos.filter(video => video.category === category);
+    filmsGrid.innerHTML = '';
+
+    if (!list.length) {
+      const catObj = (SITE_CONFIG.videoCategories || []).find(c => c.id === category);
+      const catName = catObj ? catObj.name : 'Our films';
+      const waText = encodeURIComponent(`Hello Jai Jinendra Events! I would love to watch your ${catName.toLowerCase()}.`);
+      filmsGrid.innerHTML = `
+        <div class="col-span-full w-full">
+          <div class="max-w-2xl mx-auto text-center bg-white rounded-2xl border border-gold-200/70 shadow-luxury px-6 py-10">
+            <div class="inline-flex w-14 h-14 items-center justify-center rounded-full bg-gold-100 text-gold-700 mb-4">
+              <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-obsidian-950">${catName} are being uploaded</h3>
+            <p class="text-stone-600 text-sm mt-2 max-w-md mx-auto">Want to watch one right now? Message us and we will share a full film with you on WhatsApp.</p>
+            <a href="https://wa.me/${SITE_CONFIG.business.whatsappNumber}?text=${waText}" target="_blank" rel="noopener noreferrer" class="btn-gold-luxury text-xs mt-6">
+              <span>Request a Film on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    list.forEach(video => filmsGrid.appendChild(createFilmCard(video)));
+    initScrollEffects();
+  }
+
+  filmTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      setActivePill(filmTabs, tab);
+      renderFilms(tab.getAttribute('data-film-category'));
+    });
+  });
+
+  // Open on the first category that actually has films
+  const firstWithFilms = Array.from(filmTabs).find(tab =>
+    videos.some(video => video.category === tab.getAttribute('data-film-category'))
+  );
+  const startTab = firstWithFilms || filmTabs[0];
+  if (startTab) startTab.click();
 }
 
 /**
