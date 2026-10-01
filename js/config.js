@@ -15,8 +15,8 @@ const SITE_CONFIG = {
     shortName: "JJ Events",
     establishedYear: 2026,
     tagline: "Creating Timeless Celebrations & Royal Memories",
-    subTagline: "From grand wedding decors and cinematic drone coverage to high-energy birthdays and seamless corporate affairs, we bring your dream events to life.",
-    email: "jaijinedraevents@gmail.com",
+    subTagline: "From grand wedding decor and cinematic drone coverage to high-energy birthdays and seamless corporate affairs, we bring your dream events to life.",
+    email: "jaijinendraevents@gmail.com",
     phone: "+91 90217 02266", // Primary contact
     phoneDisplay: "+91 90217 02266",
     whatsappNumber: "919021702266",
@@ -83,7 +83,7 @@ const SITE_CONFIG = {
     {
       id: "baby-shower",
       title: "Baby Shower Celebrations",
-      shortDesc: "Whimsical pastels, traditional godh bharai setups, custom floral cradle decors, and joyous family photo corners.",
+      shortDesc: "Whimsical pastels, traditional godh bharai setups, custom floral cradle decor, and joyous family photo corners.",
       icon: "baby-carriage",
       category: "Family",
       featured: true,
@@ -147,7 +147,7 @@ const SITE_CONFIG = {
         "Pure vegetarian & 100% authentic Jain catering",
         "Live chaat, mocktail, Italian & oriental counters",
         "Royal buffet presentation with brass/copper chafers",
-        "Trained uniform staff & hygienic food stations"
+        "Trained uniformed staff & hygienic food stations"
       ]
     },
     {
@@ -1156,7 +1156,7 @@ const SITE_CONFIG = {
     {
       category: "wedding-highlights",
       title: "Engagement Highlight Film",
-      description: "The complete engagement celebration - rituals, family and the couple - in one cinematic film.",
+      description: "The complete engagement celebration — rituals, family and the couple — in one cinematic film.",
       url: "./public/videos/engagement-highlight-film.mp4",
       poster: "./public/videos/engagement-highlight-film.jpg",
       vertical: false
@@ -1164,7 +1164,7 @@ const SITE_CONFIG = {
     {
       category: "wedding-highlights",
       title: "A Grand Welcome for the Bride-to-Be",
-      description: "Home welcome décor for the bride - floral entrance, rangoli and a 'Will You Marry Me' stage.",
+      description: "Home welcome decor for the bride — floral entrance, rangoli and a 'Will You Marry Me' stage.",
       url: "./public/videos/bride-to-be-welcome-decor.mp4",
       poster: "./public/videos/bride-to-be-welcome-decor.jpg",
       vertical: true

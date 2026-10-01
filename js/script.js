@@ -79,12 +79,12 @@ function initDynamicConfig() {
   document.querySelectorAll('[data-config-href]').forEach(el => {
     const type = el.getAttribute('data-config-href');
     if (type === 'whatsapp') {
-      const defaultMsg = encodeURIComponent(`Hello Jai Jinendra Events! I would like to inquire about event management services for an upcoming event.`);
+      const defaultMsg = encodeURIComponent(`Hello Jai Jinendra Events! I would like to enquire about event management services for an upcoming event.`);
       el.setAttribute('href', `https://wa.me/${cfg.whatsappNumber}?text=${defaultMsg}`);
     } else if (type === 'phone') {
       el.setAttribute('href', `tel:${cfg.phone.replace(/[^0-9+]/g, '')}`);
     } else if (type === 'email') {
-      el.setAttribute('href', `mailto:${cfg.email}?subject=Event%20Inquiry%20-%20Jai%20Jinendra%20Events`);
+      el.setAttribute('href', `mailto:${cfg.email}?subject=Event%20Enquiry%20-%20Jai%20Jinendra%20Events`);
     } else if (type === 'instagram') {
       el.setAttribute('href', cfg.instagramUrl);
     }
@@ -308,7 +308,7 @@ function initGalleryAndLightbox() {
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
           </div>
           <h3 class="text-xl font-serif text-charcoal-800 mb-2">Photos Coming Soon</h3>
-          <p class="text-stone-500 text-sm max-w-md mx-auto">We are updating high-resolution photographs for this category. Stay tuned or inquire with our team directly!</p>
+          <p class="text-stone-500 text-sm max-w-md mx-auto">We are updating high-resolution photographs for this category. Stay tuned or enquire with our team directly!</p>
         </div>
       `;
       return;
@@ -699,7 +699,7 @@ function initFilms() {
 }
 
 /**
- * Contact & Inquiry Form with instant WhatsApp formatter and Mailto dispatcher
+ * Contact & Enquiry Form with instant WhatsApp formatter and Mailto dispatcher
  */
 function initContactForm() {
   const form = document.getElementById('event-inquiry-form');
@@ -712,7 +712,7 @@ function initContactForm() {
 
     const name = form.querySelector('[name="name"]')?.value.trim() || 'Guest';
     const phone = form.querySelector('[name="phone"]')?.value.trim() || 'Not provided';
-    const eventType = form.querySelector('[name="event_type"]')?.value || 'General Inquiry';
+    const eventType = form.querySelector('[name="event_type"]')?.value || 'General Enquiry';
     const eventDate = form.querySelector('[name="event_date"]')?.value || 'To be decided';
     const guestCount = form.querySelector('[name="guest_count"]')?.value || 'Not specified';
     const city = form.querySelector('[name="city"]')?.value.trim() || cfg.location;
@@ -720,7 +720,7 @@ function initContactForm() {
 
     // Construct formatted WhatsApp message
     const waMessage = 
-`✨ *NEW EVENT INQUIRY - JAI JINENDRA EVENTS* ✨
+`✨ *NEW EVENT ENQUIRY - JAI JINENDRA EVENTS* ✨
 
 👤 *Client Name:* ${name}
 📞 *Phone Number:* ${phone}
@@ -740,7 +740,7 @@ _Sent via Jai Jinendra Events Website_`;
 
     // Notification feedback
     const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn ? submitBtn.innerHTML : 'Send Inquiry';
+    const originalText = submitBtn ? submitBtn.innerHTML : 'Send Enquiry';
 
     if (submitBtn) {
       submitBtn.innerHTML = `
@@ -764,17 +764,17 @@ _Sent via Jai Jinendra Events Website_`;
     mailtoBtn.addEventListener('click', () => {
       const name = form.querySelector('[name="name"]')?.value.trim() || 'Guest';
       const phone = form.querySelector('[name="phone"]')?.value.trim() || 'Not provided';
-      const eventType = form.querySelector('[name="event_type"]')?.value || 'General Inquiry';
+      const eventType = form.querySelector('[name="event_type"]')?.value || 'General Enquiry';
       const eventDate = form.querySelector('[name="event_date"]')?.value || 'To be decided';
       const guestCount = form.querySelector('[name="guest_count"]')?.value || 'Not specified';
       const city = form.querySelector('[name="city"]')?.value.trim() || cfg.location;
       const message = form.querySelector('[name="message"]')?.value.trim() || 'No additional notes.';
 
-      const subject = encodeURIComponent(`Event Inquiry for ${eventType} - ${name}`);
+      const subject = encodeURIComponent(`Event Enquiry for ${eventType} - ${name}`);
       const body = encodeURIComponent(
 `Hello Jai Jinendra Events Team,
 
-Here are my event inquiry details:
+Here are my event enquiry details:
 
 Name: ${name}
 Phone: ${phone}

@@ -2,7 +2,7 @@
 
 A modern, mobile-first, high-performance website for **Jai Jinendra Events** (Established 2026), built with **Semantic HTML5, Tailwind CSS CLI, and Vanilla JavaScript**.
 
-Designed with a warm, royal Indian celebratory palette (Royal Maroon & Imperial Gold), smooth animations, mobile navigation drawer, interactive category-filtered gallery with fullscreen lightbox, and instant WhatsApp inquiry dispatching.
+Designed with a warm, royal Indian celebratory palette (Royal Maroon & Imperial Gold), smooth animations, mobile navigation drawer, interactive category-filtered gallery with fullscreen lightbox, and instant WhatsApp enquiry dispatching.
 
 ---
 
@@ -14,7 +14,7 @@ JJ_Event/
 ├── about.html              # About page (Our story since 2026, 4-step workflow, core values)
 ├── services.html           # Full showcase of all 13 dedicated event services
 ├── gallery.html            # Category-filtered photo gallery with fullscreen lightbox modal
-├── contact.html            # Event inquiry form with instant WhatsApp & Email generation + Map
+├── contact.html            # Event enquiry form with instant WhatsApp & Email generation + Map
 │
 ├── js/
 │   ├── config.js           # ⚙️ CENTRAL SETTINGS: Edit phone, email, WhatsApp, services, gallery photos & films here!
@@ -87,7 +87,7 @@ const SITE_CONFIG = {
   business: {
     name: "Jai Jinendra Events",
     establishedYear: 2026,
-    email: "jaijinedraevents@gmail.com",
+    email: "jaijinendraevents@gmail.com",
     phone: "+91 98765 43210",              // <--- EDIT YOUR PHONE NUMBER
     phoneDisplay: "+91 98765 43210",
     whatsappNumber: "919876543210",         // <--- NUMBERS ONLY (with country code, no + or spaces)
@@ -176,10 +176,10 @@ The site comes pre-configured with all 13 starting services:
 
 ---
 
-## 💬 WhatsApp & Email Inquiry Dispatcher
+## 💬 WhatsApp & Email Enquiry Dispatcher
 
-- When a client fills out the inquiry form on `contact.html`, clicking **"Send Inquiry via WhatsApp"** automatically generates a clean, structured message (including client name, phone, selected event type, date, guest count, venue, and special notes) and opens WhatsApp directly to chat with `+91 98765 43210`.
-- An alternative **"Send Inquiry via Email"** button prepares a pre-filled `mailto:` message.
+- When a client fills out the enquiry form on `contact.html`, clicking **"Send Enquiry via WhatsApp"** automatically generates a clean, structured message (including client name, phone, selected event type, date, guest count, venue, and special notes) and opens WhatsApp directly to chat with `+91 98765 43210`.
+- An alternative **"Send Enquiry via Email"** button prepares a pre-filled `mailto:` message.
 
 ### Optional Future Backend Upgrades:
 If you later wish to receive emails directly in your inbox without opening an email client:
