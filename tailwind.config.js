@@ -49,9 +49,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        display: ['"Cinzel"', '"Playfair Display"', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        serif: ['"Spectral"', 'Georgia', 'serif'],
+        display: ['"Spectral"', 'Georgia', 'serif'],
+        sans: ['"Poppins"', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       boxShadow: {
         'gold-glow': '0 0 35px -5px rgba(212, 175, 55, 0.35)',
