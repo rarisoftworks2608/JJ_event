@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGalleryAndLightbox();
   initGalleryCounts();
   initFilms();
+  initStories();
   initContactForm();
   initServicePreselection();
 });
@@ -606,8 +607,8 @@ function createFilmCard(video) {
         </span>
       </button>
       <div class="px-2 pt-4 pb-2 flex-1">
-        <h3 class="font-serif text-sm sm:text-lg font-bold text-obsidian-950 line-clamp-2 sm:line-clamp-1">${video.title}</h3>
-        ${video.description ? `<p class="hidden sm:block text-stone-600 text-sm mt-1 leading-relaxed line-clamp-2 min-h-[2.75rem]">${video.description}</p>` : ''}
+        <h3 class="font-serif text-sm leading-5 h-10 sm:h-auto sm:text-lg sm:leading-normal font-bold text-obsidian-950 line-clamp-2 sm:line-clamp-1">${video.title}</h3>
+        ${video.description ? `<p class="max-sm:hidden text-stone-600 text-sm mt-1 leading-relaxed line-clamp-2 h-[2.75rem]">${video.description}</p>` : ''}
       </div>
     </div>
   `;
@@ -696,6 +697,55 @@ function initFilms() {
   );
   const startTab = firstWithFilms || filmTabs[0];
   if (startTab) startTab.click();
+}
+
+/**
+ * Our Stories strip on the home page (SITE_CONFIG.stories) - plays in the film pop-up and
+ * moves on to the next story automatically, like Instagram stories
+ */
+function initStories() {
+  const track = document.getElementById('stories-track');
+  if (!track || typeof SITE_CONFIG === 'undefined') return;
+  const stories = SITE_CONFIG.stories || [];
+  if (!stories.length) {
+    track.closest('section')?.remove();
+    return;
+  }
+
+  const playStory = index => {
+    const name = stories[index];
+    const file = `./public/videos/stories/${name}.mp4`;
+    const poster = `./public/videos/stories/${name}.jpg`;
+    openFilmPlayer({ title: `Story ${index + 1} of ${stories.length}`, vertical: true }, { file }, poster);
+    const video = document.querySelector('#film-player video');
+    if (video && index + 1 < stories.length) {
+      video.addEventListener('ended', () => playStory(index + 1), { once: true });
+    }
+  };
+
+  stories.forEach((name, index) => {
+    const card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'story-card';
+    card.setAttribute('aria-label', `Play story ${index + 1}`);
+    card.innerHTML = `
+      <span class="story-card-inner">
+        <img src="./public/videos/stories/${name}.jpg" alt="" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+        <span class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10"></span>
+        <span class="absolute inset-0 flex items-center justify-center">
+          <span class="w-11 h-11 rounded-full bg-white/85 text-primary-800 flex items-center justify-center shadow-lg">
+            <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </span>
+      </span>
+    `;
+    card.addEventListener('click', () => playStory(index));
+    track.appendChild(card);
+  });
+
+  const scrollByCards = dir => track.scrollBy({ left: dir * track.clientWidth * 0.8, behavior: 'smooth' });
+  document.getElementById('stories-prev')?.addEventListener('click', () => scrollByCards(-1));
+  document.getElementById('stories-next')?.addEventListener('click', () => scrollByCards(1));
 }
 
 /**

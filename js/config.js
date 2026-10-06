@@ -651,6 +651,90 @@ const SITE_CONFIG = {
       image: "./public/gallery/pre-wedding/TWS00720-Enhanced-NR.jpg"
     },
     {
+      id: "pw4",
+      category: "pre-wedding",
+      title: "Golden Hour Embrace",
+      description: "A tender moment in soft golden-hour light amid wild grass.",
+      image: "./public/gallery/pre-wedding/prewedding-04.jpg"
+    },
+    {
+      id: "pw5",
+      category: "pre-wedding",
+      title: "Forehead to Forehead",
+      description: "A quiet, intimate pose against warm hillside tones.",
+      image: "./public/gallery/pre-wedding/prewedding-05.jpg"
+    },
+    {
+      id: "pw6",
+      category: "pre-wedding",
+      title: "Piggyback Joy",
+      description: "A playful, candid moment on a sunlit forest road.",
+      image: "./public/gallery/pre-wedding/prewedding-06.jpg"
+    },
+    {
+      id: "pw7",
+      category: "pre-wedding",
+      title: "Sunlit Romance",
+      description: "Backlit portraits glowing with natural evening light.",
+      image: "./public/gallery/pre-wedding/prewedding-07.jpg"
+    },
+    {
+      id: "pw8",
+      category: "pre-wedding",
+      title: "A Twirl on the Palace Steps",
+      description: "A graceful dance on carved palace stairs in traditional attire.",
+      image: "./public/gallery/pre-wedding/prewedding-08.jpg"
+    },
+    {
+      id: "pw9",
+      category: "pre-wedding",
+      title: "Close & Candid",
+      description: "An emotional close-up in rich traditional wear.",
+      image: "./public/gallery/pre-wedding/prewedding-09.jpg"
+    },
+    {
+      id: "pw10",
+      category: "pre-wedding",
+      title: "Royal Courtyard Embrace",
+      description: "A warm embrace against the palace's carved jaali walls.",
+      image: "./public/gallery/pre-wedding/prewedding-10.jpg"
+    },
+    {
+      id: "pw11",
+      category: "pre-wedding",
+      title: "Palace Corridor Portrait",
+      description: "The couple framed by ornate pillars and a crystal chandelier.",
+      image: "./public/gallery/pre-wedding/prewedding-11.jpg"
+    },
+    {
+      id: "pw12",
+      category: "pre-wedding",
+      title: "Glasshouse Dance",
+      description: "A first-dance moment under a grand chandelier.",
+      image: "./public/gallery/pre-wedding/prewedding-13.jpg"
+    },
+    {
+      id: "pw13",
+      category: "pre-wedding",
+      title: "Pampas Ring at Night",
+      description: "A night shoot inside an illuminated pampas-and-greenery ring.",
+      image: "./public/gallery/pre-wedding/prewedding-15.jpg"
+    },
+    {
+      id: "pw14",
+      category: "pre-wedding",
+      title: "Under the Glowing Ring",
+      description: "A candid glance under a lit floral ring installation.",
+      image: "./public/gallery/pre-wedding/prewedding-16.jpg"
+    },
+    {
+      id: "pw15",
+      category: "pre-wedding",
+      title: "Night Ring Portrait",
+      description: "A romantic night portrait framed by pampas and soft light.",
+      image: "./public/gallery/pre-wedding/prewedding-17.jpg"
+    },
+    {
       id: "bs1",
       category: "baby-shower",
       title: "Traditional Godh Bharai Setup",
@@ -1118,6 +1202,27 @@ const SITE_CONFIG = {
       title: "Conference & Stage Production",
       description: "High-definition AV and stage production for a corporate gathering.",
       image: "./public/gallery/corporate/DSC_0857.JPG"
+    },
+    {
+      id: "c3",
+      category: "corporate",
+      title: "Annual Function Keynote",
+      description: "A keynote address on a professionally branded stage with podium and LED backdrop.",
+      image: "./public/gallery/corporate/CKP_5780.JPG"
+    },
+    {
+      id: "c4",
+      category: "corporate",
+      title: "Chief Guest Felicitation",
+      description: "Welcoming the chief guests on stage during a formal annual ceremony.",
+      image: "./public/gallery/corporate/CKP_5801.JPG"
+    },
+    {
+      id: "c5",
+      category: "corporate",
+      title: "Guest of Honour Address",
+      description: "The guest of honour addressing the audience at a corporate anniversary event.",
+      image: "./public/gallery/corporate/CKP_5829.JPG"
     }
   ],
 
@@ -1137,6 +1242,86 @@ const SITE_CONFIG = {
   // `poster` (optional) is a cover image, e.g. "./public/gallery/pre-wedding/TWS00556-Enhanced-NR.jpg".
   // YouTube and Google Drive films pick up their own cover automatically.
   videos: [
+    {
+      category: "pre-wedding",
+      title: "Shiv & Gauri",
+      description: "A cinematic pre-wedding film among heritage temples, riverside views and aerial shots.",
+      url: "./public/videos/films/shiv-gauri-prewedding.mp4",
+      poster: "./public/videos/films/shiv-gauri-prewedding.jpg",
+      vertical: false
+    },
+    {
+      category: "pre-wedding",
+      title: "Nikhil & Shruti",
+      description: "A full pre-wedding film — stylish city moments and a glowing evening celebration.",
+      url: "./public/videos/films/nikhil-shruti-prewedding.mp4",
+      poster: "./public/videos/films/nikhil-shruti-prewedding.jpg",
+      vertical: false
+    },
+    {
+      category: "pre-wedding",
+      title: "Shruti & Pratik",
+      description: "A Goa pre-wedding teaser with coastal drone shots and beachside romance.",
+      url: "./public/videos/films/shruti-pratik-teaser.mp4",
+      poster: "./public/videos/films/shruti-pratik-teaser.jpg",
+      vertical: false
+    },
+    {
+      category: "pre-wedding",
+      title: "Omkar & Akshata",
+      description: "A 4K pre-wedding song film shot across meadows, forests and an elegant glasshouse.",
+      url: "./public/videos/films/omkar-akshata-full-song.mp4",
+      poster: "./public/videos/films/omkar-akshata-full-song.jpg",
+      vertical: false
+    },
+    {
+      category: "pre-wedding",
+      title: "Omkar & Akshata — Teaser",
+      description: "The one-minute teaser of Omkar & Akshata's pre-wedding story.",
+      url: "./public/videos/films/omkar-akshata-teaser.mp4",
+      poster: "./public/videos/films/omkar-akshata-teaser.jpg",
+      vertical: false
+    },
+    {
+      category: "pre-wedding",
+      title: "Nikhil & Nikita",
+      description: "A pre-wedding film at a historic temple, in warm yellow and golden tones.",
+      url: "./public/videos/films/nikhil-nikita-prewedding.mp4",
+      poster: "./public/videos/films/nikhil-nikita-prewedding.jpg",
+      vertical: false
+    },
+    {
+      category: "wedding-highlights",
+      title: "Ankan & Sneha",
+      description: "Wedding teaser — haldi, rituals and the grand celebration in one short film.",
+      url: "./public/videos/films/ankan-sneha-wedding-teaser.mp4",
+      poster: "./public/videos/films/ankan-sneha-wedding-teaser.jpg",
+      vertical: false
+    },
+    {
+      category: "wedding-highlights",
+      title: "Urvashi & Rishabh",
+      description: "Wedding teaser — a colourful baraat, sangeet dances and vibrant decor.",
+      url: "./public/videos/films/urvashi-rishabh-wedding-teaser.mp4",
+      poster: "./public/videos/films/urvashi-rishabh-wedding-teaser.jpg",
+      vertical: false
+    },
+    {
+      category: "wedding-highlights",
+      title: "Bhakti & Rakesh",
+      description: "Wedding teaser — family moments, sangeet performances and joyful celebrations.",
+      url: "./public/videos/films/bhakti-rakesh-wedding-teaser.mp4",
+      poster: "./public/videos/films/bhakti-rakesh-wedding-teaser.jpg",
+      vertical: false
+    },
+    {
+      category: "wedding-highlights",
+      title: "Bride Gauri",
+      description: "Wedding teaser — a royal bridal entry, varmala and the wedding ceremony.",
+      url: "./public/videos/films/gauri-wedding-teaser.mp4",
+      poster: "./public/videos/films/gauri-wedding-teaser.jpg",
+      vertical: false
+    },
     {
       category: "pre-wedding",
       title: "Every Day Is a New Adventure",
@@ -1169,6 +1354,60 @@ const SITE_CONFIG = {
       poster: "./public/videos/bride-to-be-welcome-decor.jpg",
       vertical: true
     }
+  ],
+
+  // "Our Stories" strip on the home page: short vertical clips from our event days.
+  // Files live in public/videos/stories/<name>.mp4 with a matching <name>.jpg cover.
+  stories: [
+    "story-01",
+    "story-02",
+    "story-03",
+    "story-04",
+    "story-05",
+    "story-06",
+    "story-07",
+    "story-08",
+    "story-09",
+    "story-10",
+    "story-11",
+    "story-12",
+    "story-14",
+    "story-15",
+    "story-16",
+    "story-17",
+    "story-18",
+    "story-19",
+    "story-20",
+    "story-21",
+    "story-22",
+    "story-23",
+    "story-24",
+    "story-25",
+    "story-26",
+    "story-27",
+    "story-28",
+    "story-29",
+    "story-30",
+    "story-31",
+    "story-32",
+    "story-33",
+    "story-34",
+    "story-35",
+    "story-36",
+    "story-37",
+    "story-38",
+    "story-39",
+    "story-40",
+    "story-41",
+    "story-42",
+    "story-43",
+    "story-44",
+    "story-45",
+    "story-46",
+    "story-47",
+    "story-48",
+    "story-49",
+    "story-50"
   ],
 
   // Client Testimonials

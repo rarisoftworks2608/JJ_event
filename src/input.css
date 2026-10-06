@@ -150,6 +150,25 @@
     }
   }
 
+  /* Split page hero (about / services / gallery / contact) */
+  .page-hero-panel {
+    background:
+      radial-gradient(ellipse 80% 60% at 0% 100%, rgba(128, 29, 48, 0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 100% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  }
+
+  .page-hero-title {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    @apply font-normal text-pearl-50;
+    font-size: clamp(2.6rem, 4.4vw, 4.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-eyebrow-left::after {
+    display: none;
+  }
+
   .btn-hero-gold {
     @apply inline-flex items-center justify-center bg-gradient-to-br from-gold-500 to-gold-700 text-pearl-50 px-10 py-4 text-[11px] font-semibold uppercase transition-all duration-300 hover:-translate-y-0.5;
     letter-spacing: 0.22em;
@@ -261,6 +280,23 @@
     content: '';
     @apply absolute inset-0 rounded-full border-2 border-gold-400;
     animation: film-pulse 2s ease-out infinite;
+  }
+
+  /* Our Stories strip (index.html#stories) */
+  .stories-track {
+    scrollbar-width: none;
+  }
+
+  .stories-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .story-card {
+    @apply relative shrink-0 snap-start w-[132px] sm:w-[160px] lg:w-[176px] aspect-[9/16] rounded-2xl p-[3px] bg-gradient-to-br from-gold-300 via-gold-500 to-primary-700 shadow-luxury transition-transform duration-300 hover:-translate-y-1.5;
+  }
+
+  .story-card-inner {
+    @apply relative block w-full h-full overflow-hidden rounded-[13px] bg-obsidian-900;
   }
 
   /* Pop-up player: sized to each video's own shape (tall reels / wide films) */
