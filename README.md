@@ -54,6 +54,8 @@ JJ_Event/
 ### 1. Prerequisites
 - **Node.js** (v18 or higher) installed on your system.
 
+> **Slim project:** the website folder only contains what the live site needs. The full-size original photos are kept outside it (in `../JJ_Images/site-originals/`), and `node_modules/` is not included. You only need them when editing: run `npm install` once to get the build tools back, and copy original photos into `public/gallery/<category>/` before running `npm run images`.
+
 ### 2. Install Dependencies
 ```bash
 npm install
